@@ -1,5 +1,7 @@
-# 🎨 Pixel-Breeze  
 ![Pixel Breeze Banner](banner.png)
+
+# 🎨 Pixel-Breeze  
+
 
 ## 🚀 About Us  
 We are a digital-first marketing agency helping brands create a powerful online presence through:  
