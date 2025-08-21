@@ -1,6 +1,5 @@
-![Pixel Breeze Banner](banner.png)
-
 # 🎨 Pixel-Breeze  
+![Pixel Breeze Banner](banner.png)
 
 
 ## 🚀 About Us  
