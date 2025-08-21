@@ -1,13 +1,13 @@
-# Pixel Breeze 🌬️✨  
-
-Welcome to **Pixel Breeze**, a creative marketing agency where ideas flow like the breeze and pixels speak louder than words.  
+# 🎨 Pixel-Breeze  
 
 ## 🚀 About Us  
-We are a digital-first marketing agency helping brands create powerful online presence through:  
+We are a digital-first marketing agency helping brands create a powerful online presence through:  
 - 🎨 Graphic Design  
 - 📱 Social Media Marketing  
-- 📈 Performance Marketing  
-- 📝 Content Creation  
+- 📊 Performance Marketing  
+- ✍️ Content Creation  
+
+---
 
 ## 💡 What We Do  
 - Build engaging **posters, videos, and ads**  
@@ -15,18 +15,17 @@ We are a digital-first marketing agency helping brands create powerful online pr
 - Design modern **branding & creatives**  
 - Help businesses grow with smart **digital marketing strategies**  
 
+---
+
 ## 📂 Projects  
 We’ll be updating this repository with:  
 - 🖼️ Portfolio samples  
-- 📊 Marketing case studies  
+- 📑 Marketing case studies  
 - 🛠️ Tools & resources  
+
+---
 
 ## 🌐 Connect With Us  
 - Instagram: [Coming Soon]()  
 - LinkedIn: [Coming Soon]()  
 - Email: [Coming Soon]()  
-
-
-
----
-✨ Crafted with passion by **Pixel Breeze**
