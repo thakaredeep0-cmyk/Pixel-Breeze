@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+      display: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .success {
+      color: green;
+      background: #e6ffe6;
+    }
+    .error {
+      color: red;
+      background: #ffe6e6;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,28 +32,38 @@
     <button type="submit">Send Message</button>
   </form>
 
+  <!-- Message Area -->
+  <div id="formMessage" class="message"></div>
+
   <script>
     const form = document.getElementById('contactForm');
+    const messageDiv = document.getElementById('formMessage');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // prevent default page reload
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-      fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
         if (response.ok) {
-          alert('Your message has been sent!');
+          messageDiv.textContent = "✅ Your message has been sent!";
+          messageDiv.className = "message success";
+          messageDiv.style.display = "block";
           form.reset();
         } else {
-          alert('Oops! There was a problem.');
+          messageDiv.textContent = "❌ Oops! Something went wrong. Please try again.";
+          messageDiv.className = "message error";
+          messageDiv.style.display = "block";
         }
-      }).catch(error => {
-        alert('Oops! There was a problem.');
-      });
+      } catch (error) {
+        messageDiv.textContent = "❌ Network error. Please try again.";
+        messageDiv.className = "message error";
+        messageDiv.style.display = "block";
+      }
     });
   </script>
 
