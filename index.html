@@ -7,11 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Hero Header -->
-  <header>
-    <h1>Pixel Breeze</h1>
-    <p class="tagline">Breezing Your Brand to Growth.</p>
-    <a href="#contact" class="hero-btn">🚀 Get Started</a>
+
+  <!-- Hero Section -->
+  <header id="hero">
+    <div class="hero-content">
+      <h1>Pixel Breeze</h1>
+      <p class="tagline">Breezing Your Brand to Growth.</p>
+      <a href="#contact" class="btn-primary">🚀 Get Started</a>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -31,17 +34,20 @@
   <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
-    <div class="services-container">
-      <div class="service-card fade-in">🌐 Web Design</div>
-      <div class="service-card fade-in">🎨 Graphic Design</div>
-      <div class="service-card fade-in">📱 Social Media</div>
+    <div class="service-cards">
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>Web Design & Development</h3>
+      </div>
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Branding & Graphics</h3>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Mobile-Friendly Solutions</h3>
+      </div>
     </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Our Portfolio</h2>
-    <p>We create stunning digital experiences. Showcase coming soon!</p>
   </section>
 
   <!-- Contact Section -->
@@ -50,19 +56,20 @@
     <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <textarea placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
 
-    <div class="contact-info">
-      <a href="mailto:pixelbreezeagency@gmail.com" class="contact-btn">✉ Email Us</a>
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank" class="contact-btn insta">📸 Follow on Instagram</a>
+    <div class="contact-buttons">
+      <a href="mailto:pixelbreezeagency@gmail.com" class="btn-email">✉ Email Us</a>
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank" class="btn-insta">📸 Follow on Instagram</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Pixel Breeze. All rights reserved.</p>
+    <p>&copy; 2025 Pixel Breeze. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
