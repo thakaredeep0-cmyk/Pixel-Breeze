@@ -16,14 +16,12 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.8em;
 }
 
 header .tagline {
   font-size: 1.2em;
-  font-style: italic;
-  margin-top: 8px;
-  color: #f0f0f0;
+  margin-top: 5px;
 }
 
 header nav {
@@ -33,46 +31,58 @@ header nav {
 header nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 12px;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #ffd700;
+  color: #ffeb3b;
 }
 
 /* Sections */
 section {
   padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
+/* Secondary slogan */
 .secondary-slogan {
-  font-size: 1.1em;
+  margin-top: 10px;
   font-style: italic;
-  color: #0072ff;
-  margin-top: 15px;
+  color: #555;
 }
 
 /* Services */
-#services ul {
-  list-style: none;
-  padding: 0;
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-#services li {
-  margin: 12px 0;
+.service-card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
   font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: #f0f8ff;
 }
 
 /* Form */
 form {
-  max-width: 450px;
+  max-width: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -80,8 +90,8 @@ form {
 
 form input, form textarea, form button {
   margin: 10px 0;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1em;
 }
@@ -91,48 +101,42 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: #00c6ff;
-  transform: scale(1.05);
+  background: #0056cc;
 }
 
 /* Contact Buttons */
 .contact-info {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   padding: 12px 20px;
+  margin: 10px;
   border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: bold;
+  font-size: 1em;
   text-decoration: none;
-  color: white;
-  background: #0072ff;
-  transition: background 0.3s, transform 0.2s;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-btn:hover {
-  background: #00c6ff;
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.contact-btn {
+  background: #0072ff;
+  color: white;
 }
 
 .contact-btn.insta {
-  background: #E1306C;
-}
-
-.contact-btn.insta:hover {
-  background: #ff5e99;
+  background: #e1306c;
+  color: white;
 }
 
 /* Footer */
@@ -140,4 +144,24 @@ footer {
   background: #333;
   color: white;
   padding: 20px;
+  margin-top: 40px;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.2s; }
+.fade-in:nth-child(2) { animation-delay: 0.4s; }
+.fade-in:nth-child(3) { animation-delay: 0.6s; }
+.fade-in:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
