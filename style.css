@@ -8,14 +8,17 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Hero Header */
-header {
+.hero {
   background: url('hero.jpg') no-repeat center center/cover;
+  height: 100vh;
   color: white;
-  padding: 120px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  position: relative;
 }
+
 
 header::after {
   content: "";
