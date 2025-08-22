@@ -1,70 +1,138 @@
-body {
-  font-family: Arial, sans-serif;
+/* General Reset */
+* {
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f4f7fb;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Header */
 header {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
-  padding: 20px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.8em;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 header nav {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 header nav a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 15px;
   font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 4px;
 }
 
+header nav a:hover {
+  color: #ffe066;
+  border-bottom: 2px solid #ffe066;
+}
+
+/* Sections */
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* Services */
 #services ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 #services li {
-  margin: 10px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
   font-size: 1.1em;
 }
 
+#services li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Contact Form */
 form {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-form input, form textarea, form button {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
+form input, form textarea {
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 1em;
+  transition: border 0.3s;
+}
+
+form input:focus, form textarea:focus {
+  border: 1px solid #0072ff;
+  outline: none;
 }
 
 form button {
-  background: #0072ff;
-  color: white;
+  padding: 12px;
+  border-radius: 8px;
   border: none;
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
+form button:hover {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  transform: scale(1.05);
+}
+
+/* Footer */
 footer {
-  background: #333;
+  background: #222;
   color: white;
   padding: 20px;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
