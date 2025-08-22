@@ -147,3 +147,28 @@ form button {
 form button:hover {
   background: darkorange;
 }
+/* Footer */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+footer p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: orange;
+}
