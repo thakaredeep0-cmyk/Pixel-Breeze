@@ -1,10 +1,10 @@
 /* General */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   background: #f9f9f9;
   color: #333;
-  text-align: center;
+  line-height: 1.6;
 }
 
 /* Hero Section */
@@ -18,44 +18,47 @@ body {
   color: white;
   text-align: center;
 }
-
 .hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.55);
 }
-
 .hero-content {
   position: relative;
   z-index: 1;
+  max-width: 700px;
 }
-
 .hero h1 {
-  font-size: 3rem;
-  margin: 0;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
+.hero .tagline {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
 }
-
 .btn {
-  background: #0072ff;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 14px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
 }
 
 /* Navbar */
 .navbar {
   background: #0072ff;
-  padding: 10px;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .navbar ul {
   list-style: none;
@@ -65,62 +68,119 @@ body {
   justify-content: center;
 }
 .navbar li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #ffcc00;
 }
 
 /* Sections */
 .section {
-  padding: 60px 20px;
+  padding: 70px 20px;
+  text-align: center;
 }
 .section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #0072ff;
+}
+
+/* About */
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
 }
 
 /* Services */
 .service-cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 250px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  width: 280px;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.card span {
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.card i {
   font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #0072ff;
+}
+
+/* Highlight Slogan */
+.highlight {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 50px 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 /* Contact */
 form {
-  max-width: 400px;
+  max-width: 450px;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 form input, form textarea, form button {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 form button {
   background: #0072ff;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background 0.3s;
+}
+form button:hover {
+  background: #005fcc;
+}
+
+/* Contact Buttons */
+.social-buttons {
+  margin-top: 25px;
+}
+.email-btn, .insta-btn {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+.email-btn {
+  background: #0072ff;
+  color: white;
+}
+.insta-btn {
+  background: #E1306C;
+  color: white;
+}
+.email-btn:hover, .insta-btn:hover {
+  opacity: 0.85;
 }
 
 /* Footer */
@@ -146,5 +206,5 @@ footer p {
   transition: color 0.3s;
 }
 .social-icons a:hover {
-  color: orange;
+  color: #ffcc00;
 }
