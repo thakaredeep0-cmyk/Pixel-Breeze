@@ -5,53 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixel Breeze</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- Hero Section -->
-  <header id="hero">
+  <section class="hero" id="home">
+    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Pixel Breeze</h1>
-      <p class="tagline">Breezing Your Brand to Growth.</p>
-      <a href="#contact" class="btn-primary">🚀 Get Started</a>
+      <p>Breezing Your Brand to Growth.</p>
+      <a href="#contact" class="btn">🚀 Get Started</a>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  </section>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Us</h2>
-    <p>Welcome to Pixel Breeze, where creativity meets innovation. 
-       We help brands grow with stunning designs and digital solutions.</p>
-    <p class="secondary-slogan">"Pixels with Purpose."</p>
+    <p>Welcome to Pixel Breeze, where creativity meets innovation. We help brands grow with stunning designs and digital solutions.</p>
+    <em>"Pixels with Purpose."</em>
   </section>
 
   <!-- Services Section -->
-  <section id="services">
+  <section id="services" class="section services">
     <h2>Our Services</h2>
     <div class="service-cards">
       <div class="card">
-        <div class="icon">🌐</div>
+        <span>🌐</span>
         <h3>Web Design & Development</h3>
       </div>
       <div class="card">
-        <div class="icon">🎨</div>
-        <h3>Branding & Graphics</h3>
+        <span>🎨</span>
+        <h3>Branding & Graphic Design</h3>
       </div>
       <div class="card">
-        <div class="icon">📱</div>
-        <h3>Mobile-Friendly Solutions</h3>
+        <span>📱</span>
+        <h3>Social Media Management</h3>
       </div>
     </div>
   </section>
 
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section">
+    <h2>Our Work</h2>
+    <p>Coming Soon...</p>
+  </section>
+
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
@@ -59,19 +71,16 @@
       <textarea placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-
-    <div class="contact-buttons">
-      <a href="mailto:pixelbreezeagency@gmail.com" class="btn-email">✉ Email Us</a>
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank" class="btn-insta">📸 Follow on Instagram</a>
-    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Pixel Breeze. All Rights Reserved.</p>
+    <p>© 2025 Pixel Breeze | All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </footer>
 
 </body>
 </html>
-
-
