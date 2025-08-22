@@ -4,57 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Pixel Breeze</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    form { max-width: 400px; margin: auto; }
+    label { display: block; margin-top: 10px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; cursor: pointer; }
+    #form-status { margin-top: 15px; font-weight: bold; }
+  </style>
 </head>
 <body>
+
   <h2>Contact Us</h2>
-  <form id="contact-form" action="https://formspree.io/f/mldlqljr" method="POST">
-    
+  <form id="contact-form" action="https://formspree.io/f/mldlqljn" method="POST">
     <label>
       Your Name:
       <input type="text" name="name" required>
     </label>
-    <br><br>
-    
+
     <label>
       Your Email:
       <input type="email" name="_replyto" required>
     </label>
-    <br><br>
-    
+
     <label>
       Your Message:
       <textarea name="message" required></textarea>
     </label>
-    <br><br>
-    
-    <button type="submit">Send</button>
+
+    <button type="submit">Send Message</button>
+    <p id="form-status"></p>
   </form>
 
   <script>
     const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault(); // Stop page refresh
-
-      let formData = new FormData(form);
-
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
       try {
         let response = await fetch(form.action, {
           method: form.method,
-          body: formData,
+          body: data,
           headers: { 'Accept': 'application/json' }
         });
 
         if (response.ok) {
-          alert("✅ Your message has been sent!");
-          form.reset(); // clear fields
+          status.innerHTML = "✅ Your message has been sent!";
+          form.reset();
         } else {
-          alert("⚠️ Oops! Something went wrong, please try again.");
+          status.innerHTML = "❌ Oops! Something went wrong.";
         }
       } catch (error) {
-        alert("❌ Error sending message. Please check your internet.");
+        status.innerHTML = "❌ Network error. Please try again.";
       }
     });
   </script>
+
 </body>
 </html>
