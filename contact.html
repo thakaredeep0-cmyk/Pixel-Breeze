@@ -7,7 +7,11 @@
 </head>
 <body>
   <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/mldlqljr" method="POST">
+  <form
+    action="https://formspree.io/f/mldlqljr"
+    method="POST"
+    accept-charset="UTF-8"
+  >
     <label>
       Your Name:
       <input type="text" name="name" required>
@@ -15,7 +19,7 @@
     <br><br>
     <label>
       Your Email:
-      <input type="email" name="email" required>
+      <input type="email" name="_replyto" required>
     </label>
     <br><br>
     <label>
@@ -23,8 +27,13 @@
       <textarea name="message" required></textarea>
     </label>
     <br><br>
+
+    <!-- Hidden input to redirect after success -->
+    <input type="hidden" name="_next" value="thankyou.html">
+
     <button type="submit">Send</button>
   </form>
 </body>
 </html>
+
 
