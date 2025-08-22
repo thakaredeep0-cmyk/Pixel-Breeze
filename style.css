@@ -10,7 +10,7 @@ body {
 
 /* Hero Section */
 #hero {
-  background: url("hero.jpg") center/cover no-repeat;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
   height: 100vh;
   color: white;
   display: flex;
@@ -126,7 +126,8 @@ h2 {
 
 .card h3 {
   font-size: 1.2em;
-  color: #333;
+  font-weight: bold;
+  color: #000;   /* Make visible on white background */
 }
 
 /* Contact Section */
