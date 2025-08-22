@@ -155,7 +155,7 @@ footer {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  background: #0072ff;
+  background: #0072ff; /* Blue button */
   transition: background 0.3s, transform 0.2s;
 }
 
@@ -171,3 +171,4 @@ footer {
 .contact-btn.insta:hover {
   background: #ff5e99;
 }
+
