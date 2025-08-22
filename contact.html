@@ -5,35 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Pixel Breeze</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
     form { max-width: 400px; margin: auto; }
     label { display: block; margin-top: 10px; }
     input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 15px; padding: 10px; width: 100%; cursor: pointer; }
-    #form-status { margin-top: 15px; font-weight: bold; }
+    button { margin-top: 15px; padding: 10px; width: 100%; background: black; color: white; border: none; cursor: pointer; }
+    button:hover { background: #444; }
+    #form-status { margin-top: 10px; text-align: center; font-weight: bold; }
   </style>
 </head>
 <body>
 
   <h2>Contact Us</h2>
-  <form id="contact-form" action="https://formspree.io/f/mldlqljn" method="POST">
+
+  <form id="contact-form" action="https://formspree.io/f/mldlqljr" method="POST">
     <label>
       Your Name:
       <input type="text" name="name" required>
     </label>
-
     <label>
       Your Email:
-      <input type="email" name="_replyto" required>
+      <input type="email" name="email" required>
     </label>
-
     <label>
       Your Message:
       <textarea name="message" required></textarea>
     </label>
-
     <button type="submit">Send Message</button>
-    <p id="form-status"></p>
+    <div id="form-status"></div>
   </form>
 
   <script>
@@ -51,8 +50,7 @@
         });
 
         if (response.ok) {
-          status.innerHTML = "✅ Your message has been sent!";
-          form.reset();
+          window.location.href = "thankyou.html"; // ✅ Redirect after success
         } else {
           status.innerHTML = "❌ Oops! Something went wrong.";
         }
