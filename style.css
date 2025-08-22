@@ -1,143 +1,135 @@
-/* General */
+/* General Reset */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f9f9f9;
   color: #333;
   text-align: center;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-.hero {
-  background: url('hero.jpg') no-repeat center center/cover;
+/* Hero Section */
+#hero {
+  background: url("hero.jpg") center/cover no-repeat;
   height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  position: relative;
 }
 
-
-header::after {
+#hero::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
-header h1, 
-header .tagline, 
-header nav,
-header .hero-btn {
+#hero .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-header h1 {
-  margin: 0;
+#hero h1 {
   font-size: 3em;
+  margin: 0;
 }
 
-header .tagline {
+#hero .tagline {
   font-size: 1.3em;
   margin: 10px 0 20px;
 }
 
-.hero-btn {
+#hero .btn-primary {
   display: inline-block;
   padding: 12px 25px;
   background: #ff9800;
   color: white;
-  border-radius: 8px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s;
 }
 
-.hero-btn:hover {
+#hero .btn-primary:hover {
   background: #e68900;
-  transform: translateY(-3px);
 }
 
-header nav {
-  margin-top: 25px;
+/* Navigation */
+nav {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 2;
 }
 
-header nav a {
+nav a {
   color: white;
   text-decoration: none;
-  margin: 0 12px;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #ffeb3b;
 }
 
 /* Sections */
 section {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: auto;
-  border-radius: 12px;
-  margin-bottom: 30px;
+  padding: 60px 20px;
 }
 
-/* Backgrounds for sections */
-#about {
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-#services {
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
-  color: #fff;
-}
-
-#portfolio {
-  background: #f0f0f0;
-}
-
-#contact {
-  background: linear-gradient(135deg, #d9a7c7, #fffcdc);
-}
-
-/* Secondary slogan */
+/* About Section */
 .secondary-slogan {
-  margin-top: 10px;
   font-style: italic;
   color: #555;
+  margin-top: 10px;
 }
 
-/* Services */
-.services-container {
+/* Services Section */
+#services {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 40px 20px;
+}
+
+.service-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
 
-.service-card {
+.card {
   background: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.service-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  background: #f0f8ff;
+.card:hover {
+  transform: translateY(-10px);
 }
 
-/* Form */
+.card .icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Contact Section */
 form {
   max-width: 400px;
   margin: auto;
@@ -147,10 +139,9 @@ form {
 
 form input, form textarea, form button {
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 1em;
 }
 
 form button {
@@ -158,42 +149,45 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 form button:hover {
-  background: #0056cc;
+  background: #0056b3;
 }
 
 /* Contact Buttons */
-.contact-info {
+.contact-buttons {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.contact-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  margin: 10px;
-  border-radius: 8px;
-  font-size: 1em;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.contact-btn {
+.btn-email {
   background: #0072ff;
+  padding: 10px 20px;
+  border-radius: 25px;
   color: white;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.contact-btn.insta {
+.btn-email:hover {
+  background: #0056b3;
+}
+
+.btn-insta {
   background: #e1306c;
+  padding: 10px 20px;
+  border-radius: 25px;
   color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-insta:hover {
+  background: #b62456;
 }
 
 /* Footer */
@@ -201,24 +195,4 @@ footer {
   background: #333;
   color: white;
   padding: 20px;
-  margin-top: 40px;
-}
-
-/* Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.fade-in:nth-child(1) { animation-delay: 0.2s; }
-.fade-in:nth-child(2) { animation-delay: 0.4s; }
-.fade-in:nth-child(3) { animation-delay: 0.6s; }
-.fade-in:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
