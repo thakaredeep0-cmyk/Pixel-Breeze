@@ -39,8 +39,15 @@ We’ll be updating this repository with:
   </form>
 
   <div class="contact-info">
-    <p><i class="fas fa-envelope"></i> 
-      <a href="mailto:pixelbreezeagency@gmail.com">pixelbreezeagency@gmail.com</a>
+    <a href="mailto:pixelbreezeagency@gmail.com" class="contact-btn">
+      <i class="fas fa-envelope"></i> Email Us
+    </a>
+    <a href="https://instagram.com/pixelbreeze.agency" target="_blank" class="contact-btn insta">
+      <i class="fab fa-instagram"></i> Follow on Instagram
+    </a>
+  </div>
+</section>
+
     </p>
     <p><i class="fab fa-instagram"></i> 
       <a href="https://instagram.com/pixelbreeze.agency" target="_blank">@pixelbreeze.agency</a>
