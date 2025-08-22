@@ -1,140 +1,199 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Reset */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  margin: 0;
   background: #f9f9f9;
-}
-
-/* Navbar */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 15px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-nav a {
-  margin: 0 20px;
-  text-decoration: none;
   color: #333;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ff9800;
+  text-align: center;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Hero Section */
-.hero {
+#hero {
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
   height: 100vh;
-  background: url("hero.jpg") no-repeat center center/cover;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  margin-top: 60px; /* offset for fixed navbar */
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: white;
-  margin: 15px 0;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+#hero .hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.hero button {
+#hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+#hero .tagline {
+  font-size: 1.3em;
+  margin: 10px 0 20px;
+}
+
+#hero .btn-primary {
+  display: inline-block;
+  padding: 12px 25px;
   background: #ff9800;
   color: white;
-  border: none;
-  padding: 12px 25px;
-  margin-top: 15px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-.hero button:hover {
+#hero .btn-primary:hover {
   background: #e68900;
 }
 
-/* Section General */
-section {
-  padding: 80px 20px;
-  text-align: center;
+/* Navigation */
+nav {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 2;
 }
 
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+nav a {
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
-/* About */
-.about {
+/* Sections */
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* About Section */
+.secondary-slogan {
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Services Section */
+#services {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 40px 20px;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
   background: white;
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Services */
-.services {
-  background: linear-gradient(135deg, #6ee7f9, #3b82f6);
-  color: black;
-  padding: 80px 20px;
-}
-
-.services h2 {
-  color: white;
-  margin-bottom: 40px;
-}
-
-.service-box {
-  background: white;
-  padding: 25px;
-  margin: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: inline-block;
+  border-radius: 15px;
+  padding: 20px;
   width: 250px;
-  vertical-align: top;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-.service-box h3 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #333;
+.card:hover {
+  transform: translateY(-10px);
 }
 
-/* Contact */
-.contact {
-  background: white;
-  max-width: 900px;
+.card .icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;   /* Make visible on white background */
+}
+
+/* Contact Section */
+form {
+  max-width: 400px;
   margin: auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea, form button {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #0072ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-email {
+  background: #0072ff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-email:hover {
+  background: #0056b3;
+}
+
+.btn-insta {
+  background: #e1306c;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-insta:hover {
+  background: #b62456;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
 }
