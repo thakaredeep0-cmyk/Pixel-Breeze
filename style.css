@@ -45,6 +45,26 @@ section {
   padding: 50px 20px;
   max-width: 900px;
   margin: auto;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+/* Backgrounds for sections */
+#about {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+#services {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  color: #fff;
+}
+
+#portfolio {
+  background: #f0f0f0;
+}
+
+#contact {
+  background: linear-gradient(135deg, #d9a7c7, #fffcdc);
 }
 
 /* Secondary slogan */
