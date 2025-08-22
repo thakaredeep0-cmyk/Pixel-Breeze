@@ -136,3 +136,38 @@ footer {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Contact Buttons */
+.contact-info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background: #0072ff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-btn:hover {
+  background: #00c6ff;
+  transform: scale(1.05);
+}
+
+.contact-btn.insta {
+  background: #E1306C; /* Instagram pink */
+}
+
+.contact-btn.insta:hover {
+  background: #ff5e99;
+}
