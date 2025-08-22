@@ -28,6 +28,22 @@ We’ll be updating this repository with:
 ---
 
 ## 🌐 Connect With Us  
-- Instagram: [Coming Soon]()  
-- LinkedIn: [Coming Soon]()  
-- Email: [Coming Soon]()  
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p><i class="fas fa-envelope"></i> 
+      <a href="mailto:pixelbreezeagency@gmail.com">pixelbreezeagency@gmail.com</a>
+    </p>
+    <p><i class="fab fa-instagram"></i> 
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank">@pixelbreeze.agency</a>
+    </p>
+  </div>
+</section>
