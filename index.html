@@ -6,6 +6,44 @@
   <title>Pixel Breeze</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Adjust logo size */
+    .navbar .logo img {
+      height: 120px; /* Increased default logo size */
+      width: auto;
+      transition: height 0.3s;
+    }
+    .navbar.shrink .logo img {
+      height: 70px; /* Shrinked size when scrolling */
+    }
+
+    /* Hero Section text size */
+    .hero h1 {
+      font-size: 4rem; /* Increased from 3.5rem */
+    }
+    .hero .tagline {
+      font-size: 1.6rem; /* Increased from 1.3rem */
+    }
+
+    /* Portfolio grid placeholder */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 30px auto 0 auto;
+    }
+    .portfolio-item {
+      background: #f0f0f0;
+      padding: 60px 0;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      color: #0072ff;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
@@ -71,6 +109,12 @@
     <p style="font-size:1.1rem; max-width:700px; margin:auto;">
       Our portfolio is coming soon! Stay tuned to see our creative projects and the work we’ve done to help brands grow.
     </p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">Project Coming Soon</div>
+      <div class="portfolio-item">Project Coming Soon</div>
+      <div class="portfolio-item">Project Coming Soon</div>
+      <div class="portfolio-item">Project Coming Soon</div>
+    </div>
   </section>
 
   <!-- Highlight Slogan -->
