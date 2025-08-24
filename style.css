@@ -68,7 +68,7 @@ body {
 
 /* Logo */
 .navbar .logo img {
-  height: 150px; /* larger logo */
+  height: 200px; /* larger logo */
   width: auto;
   transition: height 0.3s;
 }
