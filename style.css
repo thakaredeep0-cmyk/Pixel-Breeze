@@ -217,7 +217,7 @@ body {
   opacity: 0.9;
 }
 
-/* Contact Info Card */
+/* Contact Info Card (Email + Instagram only) */
 .contact-info {
   flex: 1;
   min-width: 280px;
@@ -240,7 +240,7 @@ body {
   color: #ffcc00;
 }
 
-/* Social Icons in Contact */
+/* Social Icon (Instagram only) */
 .contact-social {
   margin-top: 20px;
 }
