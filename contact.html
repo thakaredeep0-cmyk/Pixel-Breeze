@@ -1,31 +1,18 @@
-<form
-  action="https://formspree.io/f/xblknavj"
-  class="fs-form"
-  target="_top"
-  method="POST"
->
-  <div class="fs-field">
-    <label class="fs-label" for="name">Your Name</label>
-    <input class="fs-input" id="name" name="name" required />
-  </div>
-  <div class="fs-field">
-    <label class="fs-label" for="email">Email</label>
-    <input class="fs-input" id="email" name="email" type="email" required />
-    <p class="fs-description">
-      This will help me respond to your query via an email.
-    </p>
-  </div>
-  <div class="fs-field">
-    <label class="fs-label" for="message">Message</label>
-    <textarea
-      class="fs-textarea"
-      id="message"
-      name="message"
-      required
-    ></textarea>
-    <p class="fs-description">What would you like to discuss?</p>
-  </div>
-  <div class="fs-button-group">
-    <button class="fs-button" type="submit">Submit</button>
-  </div>
+<form action="https://formspree.io/f/xblknavj" method="POST">
+  <label>
+    Your Name:
+    <input type="text" name="name" required>
+  </label>
+  <br>
+  <label>
+    Your Email:
+    <input type="email" name="email" required>
+  </label>
+  <br>
+  <label>
+    Your Message:
+    <textarea name="message" required></textarea>
+  </label>
+  <br>
+  <button type="submit">Send Message</button>
 </form>
