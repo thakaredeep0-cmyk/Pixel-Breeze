@@ -6,44 +6,6 @@
   <title>Pixel Breeze</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Adjust logo size */
-    .navbar .logo img {
-      height: 120px; /* Increased default logo size */
-      width: auto;
-      transition: height 0.3s;
-    }
-    .navbar.shrink .logo img {
-      height: 70px; /* Shrinked size when scrolling */
-    }
-
-    /* Hero Section text size */
-    .hero h1 {
-      font-size: 4rem; /* Increased from 3.5rem */
-    }
-    .hero .tagline {
-      font-size: 1.6rem; /* Increased from 1.3rem */
-    }
-
-    /* Portfolio grid placeholder */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 30px auto 0 auto;
-    }
-    .portfolio-item {
-      background: #f0f0f0;
-      padding: 60px 0;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      color: #0072ff;
-      font-size: 1.1rem;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-  </style>
 </head>
 <body>
 
@@ -76,9 +38,7 @@
   <!-- About Section -->
   <section class="section about" id="about">
     <h2>About Us</h2>
-    <p>
-      Pixel Breeze is a creative agency that delivers high-quality designs and marketing strategies to help your brand grow and stand out in the market.
-    </p>
+    <p>Pixel Breeze is a creative agency that delivers high-quality designs and marketing strategies to help your brand grow and stand out in the market.</p>
   </section>
 
   <!-- Services Section -->
@@ -106,9 +66,7 @@
   <!-- Portfolio Section -->
   <section class="section" id="portfolio">
     <h2>Portfolio</h2>
-    <p style="font-size:1.1rem; max-width:700px; margin:auto;">
-      Our portfolio is coming soon! Stay tuned to see our creative projects and the work we’ve done to help brands grow.
-    </p>
+    <p style="font-size:1.1rem; max-width:700px; margin:auto;">Our portfolio is coming soon! Stay tuned to see our creative projects and the work we’ve done to help brands grow.</p>
     <div class="portfolio-grid">
       <div class="portfolio-item">Project Coming Soon</div>
       <div class="portfolio-item">Project Coming Soon</div>
@@ -127,32 +85,22 @@
     <h2>Contact Us</h2>
     <p class="contact-subtitle">We’d love to hear from you! Fill out the form or reach out through our email or Instagram.</p>
     <div class="contact-container">
-      
       <!-- Contact Form -->
       <div class="contact-form">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email">
-        </div>
-        <div class="form-group">
-          <textarea rows="5" placeholder="Your Message"></textarea>
-        </div>
+        <div class="form-group"><input type="text" placeholder="Your Name"></div>
+        <div class="form-group"><input type="email" placeholder="Your Email"></div>
+        <div class="form-group"><textarea rows="5" placeholder="Your Message"></textarea></div>
         <button class="contact-btn">Send Message</button>
       </div>
 
       <!-- Contact Info Card -->
       <div class="contact-info">
         <h3>Contact Info</h3>
-        <p><i class="fas fa-envelope"></i> pixelbreezeagency@gmail.com</p>
-        <div class="contact-social">
-          <a href="https://www.instagram.com/pixelbreeze.agency" class="social-icon" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
+        <div class="contact-icons">
+          <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
       </div>
-
     </div>
   </section>
 
