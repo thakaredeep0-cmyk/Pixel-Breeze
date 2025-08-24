@@ -265,3 +265,15 @@ footer p {
 .social-icons a:hover {
   color: #ffcc00;
 }
+/* Navbar with Logo */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.navbar .logo img {
+  height: 50px;  /* Adjust as needed */
+  width: auto;
+}
