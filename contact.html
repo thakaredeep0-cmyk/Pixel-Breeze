@@ -4,90 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact</title>
-
-  <!-- TEMP FIX: force clicks through any overlays -->
-  <style>
-    /* Put the contact area above everything */
-    #contact-guard { position: relative; z-index: 999999; }
-    /* Make sure all elements inside can receive clicks */
-    #contact-guard, #contact-guard * { pointer-events: auto !important; }
-    /* Common overlay classes (if present) get disabled for clicks */
-    .overlay, .card-link, .link-wrapper, .click-blocker, [data-overlay] {
-      pointer-events: none !important;
-    }
-    /* Basic readable layout */
-    form { max-width: 520px; margin: 32px auto; font-family: system-ui, Arial, sans-serif; }
-    label { display:block; margin: 10px 0 6px; font-weight:600; }
-    input, textarea { width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; }
-    button { margin-top:12px; padding:12px 16px; border:0; border-radius:10px; cursor:pointer;
-             position: relative; z-index: 100000; }
-    .btn-primary { background: #2563eb; color:#fff; }
-    .status { margin-top:10px; font-weight:600; }
-  </style>
 </head>
 <body>
 
-  <div id="contact-guard">
-    <h2 style="text-align:center">Contact Us</h2>
+  <h2>Contact Us</h2>
 
-    <form action="https://formspree.io/f/xblknavj" method="POST" id="contactForm">
-      <label for="name">Your Name</label>
-      <input id="name" name="name" type="text" required />
-
-      <label for="email">Your Email</label>
-      <input id="email" name="email" type="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="btn-primary" id="sendBtn">Send Message</button>
-      <div id="status" class="status"></div>
-    </form>
-  </div>
-
-  <!-- Tiny script to confirm clicks + submit to Formspree -->
-  <script>
-    const form = document.getElementById('contactForm');
-    const btn  = document.getElementById('sendBtn');
-    const msg  = document.getElementById('status');
-
-    // If button text changes to "Sending…" when you click it,
-    // the click is reaching the button (good!).
-    btn.addEventListener('click', function () {
-      btn.textContent = 'Sending…';
-      setTimeout(() => { btn.textContent = 'Send Message'; }, 1200);
-    });
-
-    form.addEventListener('submit', async function (e) {
-      // Keep the user on the same page
-      e.preventDefault();
-      msg.textContent = '';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          msg.textContent = '✅ Your message has been sent!';
-          msg.style.color = 'green';
-          form.reset();
-        } else {
-          msg.textContent = '❌ Something went wrong. Please try again.';
-          msg.style.color = 'red';
-        }
-      } catch (err) {
-        msg.textContent = '❌ Network error. Please try again.';
-        msg.style.color = 'red';
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  </script>
+  <form action="https://formspree.io/f/xblknavj" method="POST">
+    <label>
+      Your Name:
+      <input type="text" name="name" required>
+    </label>
+    <br><br>
+    <label>
+      Your Email:
+      <input type="email" name="email" required>
+    </label>
+    <br><br>
+    <label>
+      Message:
+      <textarea name="message" required></textarea>
+    </label>
+    <br><br>
+    <button type="submit">Send</button>
+  </form>
 
 </body>
 </html>
-
