@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 20px 30px;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -66,14 +66,21 @@ body {
   transition: padding 0.3s;
 }
 
+/* Shrink navbar on scroll */
+.navbar.shrink {
+  padding: 10px 30px;
+}
+
 /* Logo */
 .navbar .logo img {
-  height: 200px; /* larger logo */
+  height: 200px !important; /* larger default logo */
   width: auto;
+  max-height: none;
+  display: block;
   transition: height 0.3s;
 }
 .navbar.shrink .logo img {
-  height: 80px; /* smaller logo when scrolling */
+  height: 80px !important; /* smaller logo on scroll */
 }
 
 /* Navbar links */
@@ -140,7 +147,7 @@ body {
   color: #0072ff;
 }
 
-/* Portfolio grid placeholder */
+/* Portfolio */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -293,4 +300,3 @@ footer p {
 .social-icons a:hover {
   color: #ffcc00;
 }
-
