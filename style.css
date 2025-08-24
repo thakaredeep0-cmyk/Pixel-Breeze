@@ -32,11 +32,11 @@ body {
   max-width: 700px;
 }
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 15px;
 }
 .hero .tagline {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   margin-bottom: 25px;
 }
 .btn {
@@ -58,7 +58,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
-  position: sticky;       /* Sticky on scroll */
+  position: sticky;
   top: 0;
   z-index: 9999;
   background: #0072ff;
@@ -68,15 +68,12 @@ body {
 
 /* Logo */
 .navbar .logo img {
-  height: 80px;           /* Default logo size */
+  height: 150px; /* larger logo */
   width: auto;
-  display: block;
   transition: height 0.3s;
 }
-
-/* Shrink logo on scroll */
 .navbar.shrink .logo img {
-  height: 50px;           /* Smaller logo when scrolling */
+  height: 80px; /* smaller logo when scrolling */
 }
 
 /* Navbar links */
@@ -89,14 +86,12 @@ body {
   align-items: center;
   gap: 25px;
 }
-
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
-
 .navbar a:hover {
   color: #ffcc00;
 }
@@ -145,6 +140,25 @@ body {
   color: #0072ff;
 }
 
+/* Portfolio grid placeholder */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto 0 auto;
+}
+.portfolio-item {
+  background: #f0f0f0;
+  padding: 60px 0;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #0072ff;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 /* Highlight Slogan */
 .highlight {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
@@ -164,7 +178,6 @@ body {
   margin-bottom: 40px;
   color: #666;
 }
-
 .contact-container {
   display: flex;
   justify-content: center;
@@ -217,7 +230,7 @@ body {
   opacity: 0.9;
 }
 
-/* Contact Info Card (Email + Instagram only) */
+/* Contact Info Card */
 .contact-info {
   flex: 1;
   min-width: 280px;
@@ -226,38 +239,33 @@ body {
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  text-align: center;
 }
 .contact-info h3 {
   margin-bottom: 20px;
   font-size: 1.4rem;
 }
-.contact-info p {
-  margin: 10px 0;
-  font-size: 1rem;
+.contact-info .contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
-.contact-info i {
-  margin-right: 10px;
-  color: #ffcc00;
-}
-
-/* Social Icon (Instagram only) */
-.contact-social {
-  margin-top: 20px;
-}
-.social-icon {
-  display: inline-block;
-  background: white;
-  color: #0072ff;
-  margin: 5px;
-  padding: 12px;
-  border-radius: 50%;
+.contact-info a {
+  color: white;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0072ff;
+  padding: 10px 15px;
+  border-radius: 8px;
   transition: background 0.3s, transform 0.2s;
 }
-.social-icon:hover {
+.contact-info a:hover {
   background: #ffcc00;
   color: #111;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Footer */
@@ -285,3 +293,4 @@ footer p {
 .social-icons a:hover {
   color: #ffcc00;
 }
+
