@@ -1,67 +1,40 @@
-/* Reset */
-* {
+/* General Styling */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
 }
 
-/* Navbar */
+/* Header */
 header {
-  background: #000;
-  padding: 15px 30px;
-}
-.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.navbar .logo {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-}
-.nav-links a:hover {
-  color: #00bfff;
+  background: #fff;
+  padding: 15px 40px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Hero Section */
-.hero {
-  height: 100vh;
-  background: url("hero.jpg") no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
+.logo img {
+  height: 100px;
+  width: auto;
 }
-.hero h1 {
-  font-size: 3rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
-}
-.hero .btn {
-  background: #00bfff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+
+nav a {
+  margin: 0 15px;
   text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
 }
-.hero .btn:hover {
-  background: #0077b6;
+nav a:hover {
+  color: #007bff;
 }
 
 /* Sections */
@@ -69,77 +42,108 @@ section {
   padding: 60px 20px;
   text-align: center;
 }
-.services .service-cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+
+/* About Us */
+#about {
+  background: #fff;
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 900px;
+  padding: 50px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-.services .card {
-  background: #f4f4f4;
-  padding: 20px;
+
+/* Services */
+#services {
+  background: #f0f4ff;
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  padding: 50px 20px;
+}
+
+.service-box {
+  display: inline-block;
+  margin: 15px;
+  padding: 20px 40px;
+  background: white;
   border-radius: 8px;
-  width: 200px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.service-box:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-5px);
 }
 
 /* Contact */
-.contact form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+#contact {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 50px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-.contact input, .contact textarea {
+
+#contact input, 
+#contact textarea {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  display: block;
 }
-.contact button {
-  background: #00bfff;
+
+#contact button {
+  background: #007bff;
   color: white;
-  padding: 12px;
   border: none;
-  border-radius: 5px;
+  padding: 14px 30px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
-.contact button:hover {
-  background: #0077b6;
+#contact button:hover {
+  background: #0056b3;
 }
 
 /* Footer */
 footer {
-  background: #000;
-  color: white;
   text-align: center;
+  background: #333;
+  color: white;
   padding: 20px;
+  margin-top: 40px;
 }
-.social-icons {
-  margin-top: 10px;
-}
+
 .social-icons a {
   color: white;
   margin: 0 10px;
-  font-size: 1.5rem;
+  font-size: 22px;
+  transition: 0.3s;
 }
 .social-icons a:hover {
-  color: #00bfff;
+  color: #007bff;
 }
 
-/* Mobile Responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .services .service-cards {
+  header {
     flex-direction: column;
-    align-items: center;
   }
-  .hero h1 {
-    font-size: 2rem;
+  nav {
+    margin-top: 10px;
   }
-  .hero p {
-    font-size: 1rem;
+  .service-box {
+    display: block;
+    margin: 15px auto;
   }
-}/* Logo image */
-.logo img {
-  height: 50px;   /* adjust size as needed */
-  width: auto;
 }
