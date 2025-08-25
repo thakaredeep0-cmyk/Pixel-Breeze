@@ -40,7 +40,7 @@ header {
 
 /* Logo styling */
 .logo img {
-  height: 80px;   /* balanced default size */
+  height: 150px;   /* balanced default size */
   width: auto;
   margin-right: 15px;
 }
