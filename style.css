@@ -35,10 +35,25 @@ header {
   color: #222;
 }
 
+/* Logo styling */
 .logo img {
-  height: 85px; /* bigger logo */
-  margin-right: 12px;
+  height: 90px;   /* large for desktop */
+  margin-right: 15px;
 }
+
+/* Responsive logo for smaller screens */
+@media (max-width: 768px) {
+  .logo img {
+    height: 65px;  /* medium for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 50px;  /* smaller for mobile */
+  }
+}
+
 
 .nav-links {
   list-style: none;
