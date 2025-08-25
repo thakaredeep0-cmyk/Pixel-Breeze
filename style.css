@@ -37,20 +37,21 @@ header {
 
 /* Logo styling */
 .logo img {
-  height: 90px;   /* large for desktop */
+  height: 200px;   /* increase this value to make it bigger */
   margin-right: 15px;
 }
 
-/* Responsive logo for smaller screens */
+/* Tablet screens */
 @media (max-width: 768px) {
   .logo img {
-    height: 65px;  /* medium for tablet */
+    height: 70px;  /* slightly smaller */
   }
 }
 
+/* Mobile screens */
 @media (max-width: 480px) {
   .logo img {
-    height: 50px;  /* smaller for mobile */
+    height: 55px;  /* balanced size */
   }
 }
 
