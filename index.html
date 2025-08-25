@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixel Breeze</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
   <!-- Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">
         <a href="#"><img src="logo.png" alt="Pixel Breeze Logo"></a>
       </div>
+      <i class="fas fa-bars menu-toggle"></i> <!-- Mobile menu button -->
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -27,106 +26,83 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Pixel Breeze</h1>
-      <p class="tagline">Breezing Your Brand to Growth</p>
-      <a href="#contact" class="btn">Get Started</a>
-    </div>
+  <section id="hero" class="hero">
+    <h1>Welcome to Pixel Breeze</h1>
+    <p class="tagline">Pixels with Purpose. Breezing your brand to growth.</p>
   </section>
 
   <!-- About Section -->
-  <section class="section about" id="about">
+  <section id="about" class="about">
     <h2>About Us</h2>
-    <p>Pixel Breeze is a creative agency that delivers high-quality designs and marketing strategies to help your brand grow and stand out in the market.</p>
+    <p>We help businesses grow through creative design and smart marketing strategies.</p>
   </section>
 
   <!-- Services Section -->
-  <section class="section" id="services">
+  <section id="services" class="services">
     <h2>Our Services</h2>
     <div class="service-cards">
-      <div class="card">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Graphic Design</h3>
-        <p>Creative and professional designs for your brand.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-bullhorn"></i>
-        <h3>Marketing Strategy</h3>
-        <p>Effective marketing campaigns to grow your audience.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Brand Growth</h3>
-        <p>Strategies to increase your brand visibility and impact.</p>
-      </div>
+      <div class="card">Graphic Design</div>
+      <div class="card">Social Media Marketing</div>
+      <div class="card">Brand Strategy</div>
     </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section class="section" id="portfolio">
-    <h2>Portfolio</h2>
-    <p style="font-size:1.1rem; max-width:700px; margin:auto;">Our portfolio is coming soon! Stay tuned to see our creative projects and the work we’ve done to help brands grow.</p>
+  <section id="portfolio" class="portfolio">
+    <h2>Our Work</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item">Project Coming Soon</div>
-      <div class="portfolio-item">Project Coming Soon</div>
-      <div class="portfolio-item">Project Coming Soon</div>
-      <div class="portfolio-item">Project Coming Soon</div>
+      <div class="item">Project 1</div>
+      <div class="item">Project 2</div>
+      <div class="item">Project 3</div>
     </div>
   </section>
 
-  <!-- Highlight Slogan -->
-  <section class="highlight">
-    Pixels with Purpose – Breezing Your Brand to Growth
-  </section>
-
   <!-- Contact Section -->
-  <section class="contact" id="contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p class="contact-subtitle">We’d love to hear from you! Fill out the form or reach out through our email or Instagram.</p>
     <div class="contact-container">
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <div class="form-group"><input type="text" placeholder="Your Name"></div>
-        <div class="form-group"><input type="email" placeholder="Your Email"></div>
-        <div class="form-group"><textarea rows="5" placeholder="Your Message"></textarea></div>
-        <button class="contact-btn">Send Message</button>
-      </div>
-
-      <!-- Contact Info Card -->
-      <div class="contact-info">
-        <h3>Contact Info</h3>
-        <div class="contact-icons">
-          <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://www.instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <form action="https://formspree.io/f/xblknavj" method="POST" class="fs-form">
+        <div class="fs-field">
+          <label class="fs-label" for="name">Your Name</label>
+          <input class="fs-input" id="name" name="name" required />
         </div>
-      </div>
+        <div class="fs-field">
+          <label class="fs-label" for="email">Email</label>
+          <input class="fs-input" id="email" name="email" type="email" required />
+        </div>
+        <div class="fs-field">
+          <label class="fs-label" for="message">Message</label>
+          <textarea class="fs-textarea" id="message" name="message" required></textarea>
+        </div>
+        <div class="fs-button-group">
+          <button class="fs-button" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
- <!-- Footer -->
-<footer>
-  <p>&copy; 2025 Pixel Breeze. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
+  <footer>
+    <p>&copy; 2025 Pixel Breeze. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="mailto:pixelbreezeagency@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.instagram.com/pixelbreeze.agency" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
 
-
-  <!-- JS for Navbar Shrink -->
+  <!-- JavaScript -->
   <script>
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('shrink');
-      } else {
-        navbar.classList.remove('shrink');
-      }
+    // Navbar toggle for mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.navbar ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
