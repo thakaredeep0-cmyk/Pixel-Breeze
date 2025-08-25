@@ -5,66 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PixelBreeze Agency</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="logo.png" alt="PixelBreeze Agency Logo">
+      <img src="logo.png" alt="PixelBreeze Logo">
     </div>
     <div class="hero-text">
       <h1>Breezing your brand to growth</h1>
       <p class="slogan">Pixel with Purpose</p>
     </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- About Section -->
+  <!-- About Us -->
   <section id="about">
     <h2>About Us</h2>
     <p>
-      At PixelBreeze Agency, we craft creative digital solutions that help your brand grow with purpose. 
-      From branding to design and digital strategy, we bring your vision to life.
+      At PixelBreeze, we craft stunning designs and digital strategies that help
+      businesses stand out. Our mission is to bring creativity and purpose
+      together to grow your brand with impact.
     </p>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- Portfolio -->
   <section id="portfolio">
     <h2>Our Portfolio</h2>
     <div class="portfolio-items">
-      <img src="hero.jpg" alt="Portfolio Sample">
-      <img src="hero.jpg" alt="Portfolio Sample">
-      <img src="hero.jpg" alt="Portfolio Sample">
+      <img src="hero.jpg" alt="Portfolio Work 1">
+      <img src="hero.jpg" alt="Portfolio Work 2">
+      <img src="hero.jpg" alt="Portfolio Work 3">
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank.html">
-      <input type="hidden" name="form-name" value="contact" />
-      <p class="hidden">
-        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-      </p>
-
+    <form name="contact" method="POST" data-netlify="true">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
       <button type="submit">Send Message</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Follow us on</p>
+    <p>&copy; 2025 PixelBreeze Agency</p>
     <div class="social-icons">
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank">Instagram</a> |
-      <a href="mailto:pixelbreezeagency@gmail.com">Email</a>
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>&copy; 2025 PixelBreeze Agency. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
-
