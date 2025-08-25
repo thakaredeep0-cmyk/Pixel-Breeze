@@ -48,9 +48,10 @@ We’ll be updating this repository with:
   </div>
 </section>
 
-    </p>
-    <p><i class="fab fa-instagram"></i> 
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank">@pixelbreeze.agency</a>
-    </p>
-  </div>
-</section>
+  <p>
+  <a href="https://instagram.com/pixelbreeze.agency" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="20" style="vertical-align:middle;"/> 
+    @pixelbreeze.agency
+  </a>
+</p>
+
