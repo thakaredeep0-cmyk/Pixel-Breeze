@@ -4,186 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixel Breeze</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: url('hero.jpg') no-repeat center center/cover;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5); /* overlay for readability */
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo img {
-      height: 250px;  /* Bigger logo */
-      width: auto;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      background: #00bfff;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #0099cc;
-    }
-
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    /* Services */
-    .services {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .service-card {
-      background: #f8f8f8;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Contact Form */
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    button {
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      background: #00bfff;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0099cc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f1f1f1;
-      margin-top: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo">
-        <img src="logo.png" alt="Pixel Breeze Logo">
-      </div>
-      <h1>Pixels with Purpose</h1>
-      <p>Breezing your brand to growth</p>
-      <a href="#contact" class="btn">Get Started</a>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Pixel Breeze Logo">
     </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Welcome to Pixel Breeze</h1>
+    <p>Breezing your brand to growth</p>
+    <a href="#contact"><button class="btn">Get in Touch</button></a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
     <h2>About Us</h2>
-    <p>At Pixel Breeze, we create designs that combine creativity and strategy. We help your brand grow with impactful visuals and smart marketing solutions.</p>
+    <p>We help businesses grow with smart designs, innovative strategies, and impactful branding solutions.</p>
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
+  <!-- Services -->
+  <section id="services" class="services">
     <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">Logo & Branding</div>
-      <div class="service-card">Social Media Design</div>
-      <div class="service-card">Marketing Strategies</div>
-    </div>
+    <ul>
+      <li>Creative Branding</li>
+      <li>Marketing Strategy</li>
+      <li>Digital Design</li>
+    </ul>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- Contact -->
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+    <form action="https://formspree.io/f/xblknavj" method="POST">
+      <div class="fs-field">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="fs-field">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="fs-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Pixel Breeze. All rights reserved.</p>
+    <p>&copy; 2025 Pixel Breeze. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </footer>
-
 </body>
 </html>
