@@ -3,193 +3,146 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
+
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  color: #333;
   line-height: 1.6;
-  background: #fff;
+  color: #333;
 }
 
 /* Navbar */
-.navbar {
+header {
+  background: #fff;
+  padding: 10px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  width: 100%;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo {
   display: flex;
   align-items: center;
-  font-weight: bold;
   font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
 }
+
 .logo img {
-  height: 45px;
-  margin-right: 10px;
+  height: 65px; /* enlarged */
+  margin-right: 12px;
 }
-.navbar ul {
-  display: flex;
+
+.nav-links {
   list-style: none;
+  display: flex;
 }
-.navbar ul li {
-  margin-left: 20px;
+
+.nav-links li {
+  margin-left: 25px;
 }
-.navbar ul li a {
+
+.nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: #222;
+  font-weight: 600;
   transition: color 0.3s;
 }
-.navbar ul li a:hover {
-  color: #007BFF;
+
+.nav-links a:hover {
+  color: #007bff;
 }
 
 /* Hero */
 .hero {
-  position: relative;
-  height: 85vh;
-  background: url('hero.jpg') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url("hero.jpg") center/cover no-repeat;
+  color: #fff;
   text-align: center;
+  padding: 160px 20px;
 }
-.hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-}
-.hero h1 {
+
+.hero-content h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-.hero p {
+
+.hero-content p {
   font-size: 1.3rem;
-  margin-bottom: 20px;
-  font-style: italic;
+  margin-bottom: 25px; /* spacing before button */
 }
+
 .btn {
   display: inline-block;
-  background: #007BFF;
-  color: white;
-  padding: 12px 25px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
   border-radius: 5px;
   text-decoration: none;
+  font-weight: 600;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #0056b3;
 }
 
 /* Sections */
 section {
-  padding: 70px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
+
 h2 {
   font-size: 2rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 /* Services */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+.service-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
+
 .service-card {
-  background: #f8f9fa;
+  background: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 250px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Portfolio */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-.portfolio-card {
-  background: #f1f3f5;
-  padding: 50px 20px;
-  border-radius: 8px;
-  font-weight: bold;
+.portfolio-message {
+  font-size: 1.2rem;
   color: #555;
-  transition: background 0.3s;
-}
-.portfolio-card:hover {
-  background: #e9ecef;
+  font-weight: 500;
+  margin-top: 10px;
 }
 
 /* Contact */
-.contact form {
+form {
   max-width: 600px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
-.contact input,
-.contact textarea {
-  margin: 10px 0;
+
+input, textarea {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
-.contact button {
-  margin-top: 10px;
-  cursor: pointer;
-}
 
-/* Footer */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-.social-icons {
-  margin-top: 10px;
-}
-.social-icons a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-.social-icons a:hover {
-  color: #007BFF;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px;
-  }
-  .navbar ul {
-    margin-top: 10px;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
+button.btn {
+  cu
