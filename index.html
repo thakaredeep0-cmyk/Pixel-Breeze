@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Breezing Your Brand</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelBreeze Agency</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo" class="logo" />
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="PixelBreeze Agency Logo">
     </div>
     <div class="hero-text">
       <h1>Breezing your brand to growth</h1>
@@ -24,73 +20,51 @@
   </header>
 
   <!-- About Section -->
-  <section class="about" id="about">
+  <section id="about">
     <h2>About Us</h2>
     <p>
-      We help brands grow with creativity, strategy, and purpose. 
-      Our mission is to design experiences that leave a lasting impact on your audience.
+      At PixelBreeze Agency, we craft creative digital solutions that help your brand grow with purpose. 
+      From branding to design and digital strategy, we bring your vision to life.
     </p>
   </section>
 
   <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio">
+  <section id="portfolio">
     <h2>Our Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item"><img src="hero.jpg" alt="Project 1"></div>
-      <div class="portfolio-item"><img src="hero.jpg" alt="Project 2"></div>
-      <div class="portfolio-item"><img src="hero.jpg" alt="Project 3"></div>
+    <div class="portfolio-items">
+      <img src="hero.jpg" alt="Portfolio Sample">
+      <img src="hero.jpg" alt="Portfolio Sample">
+      <img src="hero.jpg" alt="Portfolio Sample">
     </div>
   </section>
 
   <!-- Contact Section -->
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <!-- Hidden input required by Netlify -->
-    <input type="hidden" name="form-name" value="contact" />
-    
-    <!-- Honeypot field (spam protection, hidden with CSS) -->
-    <p class="hidden">
-      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-    </p>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank.html">
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      </p>
 
-    <!-- Form fields -->
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-      <!-- Success message -->
-      <p class="form-success" style="display:none;">✅ Thank you! Your message has been sent.</p>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>Connect with us</p>
-    <div class="social-links">
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fas fa-envelope"></i></a>
+    <p>Follow us on</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/pixelbreeze.agency" target="_blank">Instagram</a> |
+      <a href="mailto:pixelbreezeagency@gmail.com">Email</a>
     </div>
-    <p>&copy; 2025 Breezing Your Brand. All Rights Reserved.</p>
+    <p>&copy; 2025 PixelBreeze Agency. All rights reserved.</p>
   </footer>
-
-  <!-- Script for success message -->
-  <script>
-    const form = document.querySelector(".contact-form");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      await fetch("/", {
-        method: "POST",
-        body: formData,
-      });
-      form.reset();
-      form.querySelector(".form-success").style.display = "block";
-    });
-  </script>
 
 </body>
 </html>
+
