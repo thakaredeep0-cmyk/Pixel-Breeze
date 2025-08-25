@@ -13,7 +13,6 @@ body {
 
 /* Navbar */
 header {
- header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,16 +23,11 @@ header {
   z-index: 1000;
 }
 
-.logo img {
-  max-height: 50px;   /* reduced so it balances */
-  height: auto;
-  width: auto;
-}
-
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
@@ -46,25 +40,32 @@ header {
 
 /* Logo styling */
 .logo img {
-  height: 100x;   /* increase this value to make it bigger */
+  height: 80px;   /* balanced default size */
+  width: auto;
   margin-right: 15px;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
 }
 
 /* Tablet screens */
 @media (max-width: 768px) {
   .logo img {
-    height: 70px;  /* slightly smaller */
+    height: 65px;  /* slightly smaller */
   }
 }
 
 /* Mobile screens */
 @media (max-width: 480px) {
   .logo img {
-    height: 55px;  /* balanced size */
+    height: 50px;  /* balanced size */
   }
 }
 
-
+/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -90,7 +91,7 @@ header {
   background: url("hero.jpg") center/cover no-repeat;
   color: #fff;
   text-align: center;
-  padding: 160px 20px;
+  padding: 140px 20px; /* reduced height slightly */
 }
 
 .hero-content h1 {
