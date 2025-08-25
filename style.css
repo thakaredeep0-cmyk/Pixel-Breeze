@@ -1,193 +1,142 @@
-/* Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
-  background: #fff;
-  color: #333;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
+  color: #333;
 }
 
-/* Header */
+/* Navbar */
 header {
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0.8rem 1rem;
-  background: #f5f5f5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-header .logo img {
-  max-width: 90px;
-  margin-right: 1rem;
+.logo {
+  height: 50px;
+  margin-right: 10px;
 }
 
-header .hero-text {
-  flex: 1;
+.brand-text h1 {
+  font-size: 18px;
+  margin-bottom: 3px;
 }
 
-header h1 {
-  font-size: 1.2rem;
-  color: #111;
+.brand-text p {
+  font-size: 14px;
+  color: #666;
 }
 
-header .slogan {
-  font-size: 0.9rem;
-  color: #555;
-  font-style: italic;
-}
-
-/* Navigation */
-nav {
+.nav-links {
+  list-style: none;
   display: flex;
-  gap: 1rem;
 }
 
-nav a {
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
   text-decoration: none;
-  color: #111;
+  color: #333;
   font-weight: bold;
-  font-size: 0.95rem;
-  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #007BFF;
+/* Hero Section */
+.hero {
+  height: 70vh;
+  background: url('hero.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
 }
 
 /* Sections */
 section {
-  padding: 2rem 1rem;
+  padding: 60px 20px;
   text-align: center;
 }
 
-section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  color: #111;
-}
-
-section p {
-  max-width: 650px;
-  margin: 0 auto;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* Portfolio */
 #portfolio .portfolio-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.8rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 #portfolio img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 10px;
 }
 
-/* Contact Form */
+/* Contact */
 form {
-  max-width: 400px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  margin: auto;
 }
 
-form input,
-form textarea {
-  margin-bottom: 0.7rem;
-  padding: 0.7rem;
+form input, form textarea {
+  padding: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  border-radius: 5px;
 }
 
 form button {
-  padding: 0.7rem;
-  background: #007BFF;
-  color: #fff;
-  font-size: 1rem;
+  padding: 10px;
+  background: #333;
+  color: white;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  border-radius: 5px;
 }
 
 form button:hover {
-  background: #0056b3;
+  background: #555;
 }
 
 /* Footer */
 footer {
-  background: #111;
-  color: #fff;
+  background: #f4f4f4;
+  padding: 20px;
   text-align: center;
-  padding: 1rem;
 }
 
-footer .social-icons {
-  margin: 0.5rem 0;
-}
-
-footer .social-icons a {
-  color: #fff;
-  margin: 0 0.5rem;
+.social-icons a {
+  margin: 0 10px;
+  font-size: 20px;
   text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-  color: #007BFF;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #f5f5f5;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header .hero-text {
-    margin-top: 0.5rem;
-  }
 }
