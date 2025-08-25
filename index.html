@@ -47,14 +47,17 @@
     <h2>Our Services</h2>
     <div class="service-list">
       <div class="service-card">
+        <i class="fa-solid fa-palette service-icon"></i>
         <h3>Brand Identity Design</h3>
         <p>We design logos, color palettes, and brand guidelines that build a strong brand presence.</p>
       </div>
       <div class="service-card">
+        <i class="fa-solid fa-laptop-code service-icon"></i>
         <h3>Web & App Design</h3>
         <p>Modern, user-friendly, and responsive websites and apps tailored to your business needs.</p>
       </div>
       <div class="service-card">
+        <i class="fa-solid fa-bullhorn service-icon"></i>
         <h3>Digital Marketing</h3>
         <p>Boost visibility with social media, SEO, and targeted marketing strategies that deliver results.</p>
       </div>
@@ -70,11 +73,12 @@
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Subject">
-      <textarea placeholder="Message" rows="5" required></textarea>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="subject" placeholder="Subject">
+      <textarea name="message" placeholder="Message" rows="5" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
@@ -83,7 +87,7 @@
   <footer>
     <p>&copy; 2025 Pixel Breeze Agency. All rights reserved.</p>
     <div class="social-icons">
-      <a href="mailto:yourmail@example.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://instagram.com/yourusername" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </footer>
