@@ -36,7 +36,7 @@ header {
 }
 
 .logo img {
-  height: 65px; /* enlarged */
+  height: 85px; /* bigger logo */
   margin-right: 12px;
 }
 
@@ -75,22 +75,7 @@ header {
 
 .hero-content p {
   font-size: 1.3rem;
-  margin-bottom: 25px; /* spacing before button */
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #0056b3;
+  margin-bottom: 25px;
 }
 
 /* Sections */
@@ -114,11 +99,27 @@ h2 {
 
 .service-card {
   background: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
-  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  width: 280px;
   font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #111;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
 }
 
 /* Portfolio */
@@ -145,4 +146,40 @@ input, textarea {
 }
 
 button.btn {
-  cu
+  cursor: pointer;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+button.btn:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.social-icons {
+  margin-top: 12px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0 12px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
