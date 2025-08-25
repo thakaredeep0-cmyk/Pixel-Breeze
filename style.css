@@ -7,7 +7,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* enables smooth scroll */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -66,6 +66,13 @@ nav a {
 
 nav a:hover {
   color: #007BFF;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* Sections */
@@ -159,21 +166,28 @@ footer .social-icons a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  nav {
+  header .hero-text {
     margin-top: 0.5rem;
-    gap: 0.5rem;
-  }
-
-  header h1 {
-    font-size: 1rem;
-  }
-
-  header .slogan {
-    font-size: 0.85rem;
   }
 }
