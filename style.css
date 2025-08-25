@@ -13,16 +13,22 @@ body {
 
 /* Navbar */
 header {
+ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 25px;   /* reduced from 15px 30px */
+  padding: 8px 25px;  /* keeps header slim */
   background: #fff;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+.logo img {
+  max-height: 50px;   /* reduced so it balances */
+  height: auto;
+  width: auto;
+}
 
 .navbar {
   display: flex;
