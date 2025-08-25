@@ -254,4 +254,42 @@ footer {
   .logo img {
     height: 40px;
   }
+/* ==================== */
+/* Mobile Navbar Styles */
+/* ==================== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+  }
 }
