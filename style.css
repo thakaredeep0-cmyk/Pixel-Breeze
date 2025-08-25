@@ -204,3 +204,50 @@ footer .social-icons a:hover {
     flex-direction: column;
   }
 }
+/* ---------------------- */
+/* RESPONSIVE DESIGN FIXES */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+  /* Navbar mobile */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .navbar .logo img {
+    height: 100px !important; /* smaller logo on mobile */
+  }
+
+  /* Hero text scaling */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+
+  /* Services stack */
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Contact section */
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.85rem;
+  }
+  .social-icons a {
+    font-size: 1.3rem;
+  }
+}
