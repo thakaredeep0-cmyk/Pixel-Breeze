@@ -252,3 +252,7 @@ body.no-scroll{ overflow:hidden; }
 /* -------- Misc -------- */
 img{ max-width:100%; display:block; }
 a{ color: #9db8ff; }
+#chat-container {
+  position: relative;
+  z-index: 9999; /* keeps it above everything */
+}
