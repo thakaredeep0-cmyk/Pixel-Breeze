@@ -192,5 +192,63 @@
       }
     });
   </script>
+<!-- Chatbot Widget -->
+<div id="chatbot">
+  <button id="chatbotToggle" onclick="toggleChatbot()">💬</button>
+  <div id="chatbotBox">
+    <div id="chatbotHeader">🤖 May I help you?</div>
+    <div id="chatbotMessages"></div>
+    <div id="chatbotInputArea">
+      <input type="text" id="chatbotInput" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function toggleChatbot() {
+    const box = document.getElementById("chatbotBox");
+    box.style.display = box.style.display === "flex" ? "none" : "flex";
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById("chatbotInput");
+    const messages = document.getElementById("chatbotMessages");
+    const msg = input.value.trim();
+
+    if (msg) {
+      // Show user message
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-message";
+      userMsg.textContent = msg;
+      messages.appendChild(userMsg);
+
+      input.value = "";
+      messages.scrollTop = messages.scrollHeight;
+
+      // Show "typing..."
+      const typingMsg = document.createElement("div");
+      typingMsg.className = "bot-message";
+      typingMsg.textContent = "🤖 Typing...";
+      messages.appendChild(typingMsg);
+
+      try {
+        const res = await fetch("/.netlify/functions/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: msg })
+        });
+
+        const data = await res.json();
+        typingMsg.textContent = data.reply;
+      } catch (err) {
+        typingMsg.textContent = "⚠️ Sorry, something went wrong.";
+      }
+
+      messages.scrollTop = messages.scrollHeight;
+    }
+  }
+</script>
+
 </body>
 </html>
