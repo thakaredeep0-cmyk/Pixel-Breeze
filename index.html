@@ -1,258 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pixel Breeze Agency</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <img src="logo.png" alt="Pixel Breeze Logo">
-        <span class="logo-text">Pixel Breeze Agency</span>
-      </div>
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="Pixel Breeze logo" class="brand-logo" />
+        <span class="brand-name">Pixel Breeze Agency</span>
+      </a>
 
-      <!-- Hamburger button -->
-      <div class="hamburger" id="hamburger">☰</div>
+      <nav class="nav">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
 
-      <!-- Navigation links -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <ul class="nav-links" id="desktopMenu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Mobile drawer -->
+        <div class="mobile-drawer" id="mobileMenu" aria-hidden="true">
+          <ul>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Breezing your brand to growth</h1>
-      <p>Pixel with Purpose</p>
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <img src="hero.jpg" alt="" class="hero-bg" />
+    <div class="container hero-inner">
+      <h1 class="hero-title">Breezing your brand to growth</h1>
+      <p class="hero-sub">Pixel with Purpose</p>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>
-      At PixelBreeze, we craft stunning designs and digital strategies that help businesses stand out.  
-      Our mission is to bring creativity and purpose together to grow your brand with impact.
-    </p>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service-list">
-      <div class="service-card">
-        <i class="fa-solid fa-palette service-icon"></i>
-        <h3>Brand Identity Design</h3>
-        <p>We design logos, color palettes, and brand guidelines that build a strong brand presence.</p>
+  <main>
+    <!-- ======================= ABOUT ======================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p class="lead">
+          At <strong>PixelBreeze</strong>, we craft stunning designs and digital strategies that help businesses stand out.
+          Our mission is to bring creativity and purpose together to grow your brand with impact.
+        </p>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-laptop-code service-icon"></i>
-        <h3>Web & App Design</h3>
-        <p>Modern, user-friendly, and responsive websites and apps tailored to your business needs.</p>
+    </section>
+
+    <!-- ======================= SERVICES ======================= -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="cards">
+          <!-- Brand Identity -->
+          <article class="card">
+            <div class="icon">
+              <!-- palette icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.7 0 2-.8 2-1.5 0-.6-.3-1.1-.6-1.6-.3-.6-.4-1.1-.1-1.6.4-.8 1.4-1.3 2.6-1.3 1.6 0 3-1.3 3-3A9 9 0 0 0 12 3Zm-4 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4-2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+            </div>
+            <h3>Brand Identity Design</h3>
+            <p>We design logos, color palettes, and brand guidelines that build a strong brand presence.</p>
+          </article>
+
+          <!-- Web & App -->
+          <article class="card">
+            <div class="icon">
+              <!-- laptop icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3zM2 18h20v2H2z"/></svg>
+            </div>
+            <h3>Web &amp; App Design</h3>
+            <p>Modern, user-friendly, and responsive websites and apps tailored to your business needs.</p>
+          </article>
+
+          <!-- Digital Marketing -->
+          <article class="card">
+            <div class="icon">
+              <!-- megaphone icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4a2 2 0 0 0 2 2h2l4 4v-6.1l8-2.9V7.9l-8-2.9V3l-4 4H5a2 2 0 0 0-2 2Z"/></svg>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>Boost visibility with social media, SEO, and targeted marketing strategies that deliver results.</p>
+          </article>
+
+          <!-- Social Media Marketing -->
+          <article class="card">
+            <div class="icon">
+              <!-- chat bubble icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6a5 5 0 0 0-5-5H8A5 5 0 0 0 3 6v8a5 5 0 0 0 5 5h2l3.5 4 1.5-4h1a5 5 0 0 0 5-5V6Z"/></svg>
+            </div>
+            <h3>Social Media Marketing</h3>
+            <p>Plan, create, and manage content that builds community and converts followers into customers.</p>
+          </article>
+        </div>
       </div>
-      <div class="service-card">
-        <i class="fa-solid fa-bullhorn service-icon"></i>
-        <h3>Digital Marketing</h3>
-        <p>Boost visibility with social media, SEO, and targeted marketing strategies that deliver results.</p>
+    </section>
+
+    <!-- ======================= PORTFOLIO ======================= -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Portfolio</h2>
+        <p class="lead">Our portfolio is coming soon — stay tuned!</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="portfolio">
-    <h2>Our Portfolio</h2>
-    <p class="portfolio-message">Our portfolio is coming soon — stay tuned!</p>
-  </section>
+    <!-- ======================= CONTACT ======================= -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="subject" placeholder="Subject">
-      <textarea name="message" placeholder="Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+        <form id="contactForm" class="contact-form" autocomplete="on">
+          <div class="grid">
+            <label class="input">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Pixel Breeze Agency. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="mailto:pixelbreezeagency@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <label class="input">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label class="input">
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+
+        <!-- Quick links (Insta + Email) -->
+        <div class="quick-links">
+          <a class="ql" href="mailto:pixelbreezeagency@gmail.com" target="_blank" rel="noopener">
+            <!-- mail icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h20v12H2z"/><path d="M2 6l10 7L22 6"/></svg>
+            <span>Email</span>
+          </a>
+
+          <a class="ql" href="https://instagram.com/pixelbreeze.agency" target="_blank" rel="noopener">
+            <!-- instagram icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm6.5-.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Pixel Breeze Agency. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ================= Chatbot Widget ================= -->
-  <div id="chatbot-container">
-    <button id="chatbot-toggle">💬</button>
-    <div id="chatbot-box" class="hidden">
-      <div id="chatbot-header">
-        🤖 PixelBot
-        <span id="chatbot-close">✖</span>
+  <!-- ======================= PIXELBOT (Netlify) ======================= -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">
+    <!-- bubble icon -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6a5 5 0 0 0-5-5H8A5 5 0 0 0 3 6v8a5 5 0 0 0 5 5h2l3.5 4 1.5-4h1a5 5 0 0 0 5-5V6Z"/></svg>
+  </button>
+
+  <div id="chatWidget" class="chat-widget" aria-live="polite" aria-hidden="true">
+    <header class="chat-header">
+      <div class="bot-mark">
+        <span class="bot-emoji">🤖</span>
+        <strong>PixelBot</strong>
       </div>
-      <div id="chatbot-messages"></div>
-      <div id="chatbot-input-area">
-        <input type="text" id="chatbot-input" placeholder="Type your message..." />
-        <button id="chatbot-send">Send</button>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">×</button>
+    </header>
+
+    <div id="chatBody" class="chat-body">
+      <div class="msg bot">
+        <div class="bubble">👋 Hello! How can I assist you today?</div>
       </div>
     </div>
+
+    <form id="chatForm" class="chat-input" autocomplete="off">
+      <input id="chatText" type="text" placeholder="Type your message..." required />
+      <button class="btn-send" type="submit">Send</button>
+    </form>
   </div>
 
-  <style>
-    #chatbot-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-
-    #chatbot-toggle {
-      background: #0078ff;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    #chatbot-box {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      max-height: 400px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    #chatbot-header {
-      background: #0078ff;
-      color: white;
-      padding: 10px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #chatbot-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-
-    #chatbot-input-area {
-      display: flex;
-      border-top: 1px solid #ddd;
-    }
-
-    #chatbot-input {
-      flex: 1;
-      border: none;
-      padding: 10px;
-      outline: none;
-      font-size: 14px;
-    }
-
-    #chatbot-send {
-      background: #0078ff;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      #chatbot-box {
-        width: 90%;
-        right: 5%;
-        bottom: 80px;
-        max-height: 60%;
-      }
-    }
-
-    .hidden { display: none; }
-    .user { text-align: right; margin: 5px; color: #0078ff; }
-    .bot { text-align: left; margin: 5px; color: #333; }
-  </style>
-
+  <!-- ======================= SCRIPTS ======================= -->
   <script>
-    // Hamburger menu
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
 
-    // Chatbot logic
-    const toggleBtn = document.getElementById("chatbot-toggle");
-    const chatbotBox = document.getElementById("chatbot-box");
-    const closeBtn = document.getElementById("chatbot-close");
-    const sendBtn = document.getElementById("chatbot-send");
-    const inputField = document.getElementById("chatbot-input");
-    const messages = document.getElementById("chatbot-messages");
+    // Hamburger menu logic
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    toggleBtn.addEventListener("click", () => {
-      chatbotBox.classList.toggle("hidden");
-    });
-
-    closeBtn.addEventListener("click", () => {
-      chatbotBox.classList.add("hidden");
-    });
-
-    sendBtn.addEventListener("click", sendMessage);
-    inputField.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") sendMessage();
-    });
-
-    async function sendMessage() {
-      const userText = inputField.value.trim();
-      if (!userText) return;
-
-      messages.innerHTML += `<div class="user"><b>You:</b> ${userText}</div>`;
-      inputField.value = "";
-      messages.scrollTop = messages.scrollHeight;
-
-      // Call Netlify function
-      try {
-        const res = await fetch("/.netlify/functions/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: userText }),
-        });
-        const data = await res.json();
-        messages.innerHTML += `<div class="bot"><b>Bot:</b> ${data.reply}</div>`;
-      } catch (err) {
-        messages.innerHTML += `<div class="bot"><b>Bot:</b> ⚠️ Error connecting to server.</div>`;
-      }
-
-      messages.scrollTop = messages.scrollHeight;
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
     }
-  </script>
-  <!-- ================= End Chatbot Widget ================= -->
 
+    hamburger.addEventListener('click', () => {
+      const willOpen = !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(willOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!willOpen));
+      document.body.classList.toggle('no-scroll', willOpen);
+    });
+
+    // Close drawer when a link is clicked or user taps outside
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Contact form: simple mailto fallback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:pixelbreezeagency@gmail.com?subject=New inquiry from Pixel Breeze&body=${body}`;
+      this.reset();
+    });
+
+    // ================= PixelBot (Netlify function) =================
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWidget = document.getElementById('chatWidget');
+    const chatClose  = document.getElementById('chatClose');
+    const chatForm   = document.getElementById('chatForm');
+    const chatText   = document.getElementById('chatText');
+    const chatBody   = document.getElementById('chatBody');
+
+    function openChat() {
+      chatWidget.classList.add('open');
+      chatWidget.setAttribute('aria-hidden', 'false');
+      setTimeout(() => chatText.focus(), 150);
+    }
+    function closeChat() {
+      chatWidget.classList.remove('open');
+      chatWidget.setAttribute('aria-hidden', 'true');
+    }
+
+    chatToggle.addEventListener('click', openChat);
+    chatClose.addEventListener('click', closeChat);
+
+    function addMessage(text, who='bot') {
+      const row = document.createElement('div');
+      row.className = `msg ${who}`;
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      chatBody.appendChild(row);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function extractReply(data) {
+      if (!data) return null;
+      if (typeof data === 'string') return data;
+      if (data.reply) return data.reply;
+      if (data.message) return data.message;
+      if (data.response) return data.response;
+      // Common OpenAI shape
+      try {
+        const maybe = data.choices?.[0]?.message?.content;
+        if (maybe) return maybe;
+      } catch(e) {}
+      return null;
+    }
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = chatText.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      chatText.value = '';
+      addMessage('Typing…', 'bot');
+      const typingNode = chatBody.lastElementChild;
+
+      try {
+        const res = await fetch('/.netlify/functions/chatbotJs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json().catch(() => ({}));
+        const reply = extractReply(data) || "I’m not sure about that, but I’ll try to help!";
+        typingNode.querySelector('.bubble').textContent = reply;
+      } catch (err) {
+        typingNode.querySelector('.bubble').textContent =
+          "Hmm, I couldn't reach the server. Please try again in a moment.";
+      }
+    });
+
+    // Close chat on Escape, keep it above everything
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
+    });
+  </script>
 </body>
 </html>
