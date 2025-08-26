@@ -332,7 +332,7 @@
     });
  
 
-  <script>
+ <script>
   async function sendMessage(message) {
     const res = await fetch("/.netlify/functions/chatbotJs", {
       method: "POST",
@@ -354,14 +354,13 @@
     msgBox.innerHTML += `<div><b>You:</b> ${userMessage}</div>`;
     input.value = "";
 
-    // Get chatbot reply
-    const reply = await sendMessage(userMessage);
+    // Get bot reply
+    const botReply = await sendMessage(userMessage);
 
-    // Show chatbot reply
-    msgBox.innerHTML += `<div><b>Bot:</b> ${reply}</div>`;
-    msgBox.scrollTop = msgBox.scrollHeight; // auto scroll
+    // Show bot reply
+    msgBox.innerHTML += `<div><b>Bot:</b> ${botReply}</div>`;
+
+    // Auto scroll to bottom
+    msgBox.scrollTop = msgBox.scrollHeight;
   }
 </script>
-
-</body>
-</html>
