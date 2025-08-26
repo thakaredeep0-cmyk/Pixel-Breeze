@@ -98,6 +98,14 @@
       <a href="mailto:pixelbreezeagency@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
+      <!-- Help Button -->
+  <div class="help-btn" onclick="toggleHelp()">💬 May I help you?</div>
+  <div class="help-box" id="helpBox">
+    <p>How can we help you?</p>
+    <a href="mailto:pixelbreezeagency@gmail.com">📧 Email Us</a>
+    <a href="https://instagram.com/pixelbreeze.agency" target="_blank">📷 Instagram</a>
+  </div>
+
   </footer>
       <!-- Your other content -->
 
@@ -167,6 +175,22 @@
   </script>
 </body>
 </html>
+  <script>
+    function toggleHelp() {
+      var box = document.getElementById("helpBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
 
+    // Show help button only after scrolling
+    window.addEventListener("scroll", function () {
+      const helpBtn = document.querySelector(".help-btn");
+      if (window.scrollY > 200) {
+        helpBtn.style.display = "block";
+      } else {
+        helpBtn.style.display = "none";
+        document.getElementById("helpBox").style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
