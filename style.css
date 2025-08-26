@@ -339,3 +339,20 @@ footer {
     display: flex; /* show when active */
   }
 }
+/* Mobile menu hidden by default */
+nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* adjust according to navbar height */
+  left: 0;
+  width: 100%;
+  background: #fff; /* same as navbar background */
+  padding: 10px 0;
+  z-index: 999;
+}
+
+/* When active, show menu */
+nav ul.active {
+  display: flex;
+}
