@@ -4,32 +4,36 @@ export async function handler(event) {
   try {
     const { message } = JSON.parse(event.body);
 
-    // Call OpenAI
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo", // or gpt-4 if enabled
-        messages: [{ role: "user", content: message }],
-      }),
+        model: "gpt-3.5-turbo",
+        messages: [
+          { role: "system", content: "You are Pixel Breeze Agency's AI assistant. Answer queries professionally about services, portfolio, contact info, and general help." },
+          { role: "user", content: message }
+        ],
+        max_tokens: 200,
+        temperature: 0.7
+      })
     });
 
     const data = await response.json();
-
-    // Extract bot reply
-    const botReply = data.choices?.[0]?.message?.content || "Sorry, I couldn’t understand that.";
+    const reply = data.choices[0].message.content;
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply: botReply }),
+      body: JSON.stringify({ reply })
     };
+
   } catch (error) {
+    console.error("Chatbot error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "Error: " + error.message }),
+      body: JSON.stringify({ reply: "⚠️ Sorry, something went wrong with AI response." })
     };
   }
 }
