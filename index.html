@@ -9,29 +9,26 @@
 </head>
 <body>
   <!-- Header -->
-  <<header>
-  <div class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="Pixel Breeze Logo">
-      <span class="logo-text">Pixel Breeze Agency</span>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Pixel Breeze Logo">
+        <span class="logo-text">Pixel Breeze Agency</span>
+      </div>
+
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <!-- Navigation links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-
-    <!-- Hamburger button -->
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
-
-    <!-- Navigation links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -98,395 +95,164 @@
       <a href="mailto:pixelbreezeagency@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://instagram.com/pixelbreeze.agency" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
-     </footer>
-      <!-- Your other content -->
+  </footer>
+
+  <!-- ================= Chatbot Widget ================= -->
+  <div id="chatbot-container">
+    <button id="chatbot-toggle">💬</button>
+    <div id="chatbot-box" class="hidden">
+      <div id="chatbot-header">
+        🤖 PixelBot
+        <span id="chatbot-close">✖</span>
+      </div>
+      <div id="chatbot-messages"></div>
+      <div id="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="Type your message..." />
+        <button id="chatbot-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    #chatbot-toggle {
+      background: #0078ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    #chatbot-box {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #chatbot-header {
+      background: #0078ff;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    #chatbot-input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    #chatbot-input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #chatbot-send {
+      background: #0078ff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      #chatbot-box {
+        width: 90%;
+        right: 5%;
+        bottom: 80px;
+        max-height: 60%;
+      }
+    }
+
+    .hidden { display: none; }
+    .user { text-align: right; margin: 5px; color: #0078ff; }
+    .bot { text-align: left; margin: 5px; color: #333; }
+  </style>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    // Hamburger menu
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
+
+    // Chatbot logic
+    const toggleBtn = document.getElementById("chatbot-toggle");
+    const chatbotBox = document.getElementById("chatbot-box");
+    const closeBtn = document.getElementById("chatbot-close");
+    const sendBtn = document.getElementById("chatbot-send");
+    const inputField = document.getElementById("chatbot-input");
+    const messages = document.getElementById("chatbot-messages");
+
+    toggleBtn.addEventListener("click", () => {
+      chatbotBox.classList.toggle("hidden");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      chatbotBox.classList.add("hidden");
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+    inputField.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    async function sendMessage() {
+      const userText = inputField.value.trim();
+      if (!userText) return;
+
+      messages.innerHTML += `<div class="user"><b>You:</b> ${userText}</div>`;
+      inputField.value = "";
+      messages.scrollTop = messages.scrollHeight;
+
+      // Call Netlify function
+      try {
+        const res = await fetch("/.netlify/functions/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userText }),
+        });
+        const data = await res.json();
+        messages.innerHTML += `<div class="bot"><b>Bot:</b> ${data.reply}</div>`;
+      } catch (err) {
+        messages.innerHTML += `<div class="bot"><b>Bot:</b> ⚠️ Error connecting to server.</div>`;
+      }
+
+      messages.scrollTop = messages.scrollHeight;
+    }
   </script>
-    <script>
-  // Toggle menu when hamburger clicked
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('nav ul');
+  <!-- ================= End Chatbot Widget ================= -->
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu when a link is clicked
-  document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
-</script>
-    <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('nav ul');
-  const navLinks = document.querySelectorAll('nav ul li a');
-
-  // Toggle when hamburger is clicked
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu when any link is clicked
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-    });
-  });
-</script>
-  <!-- ================= Chatbot Widget ================= -->
-<style>
-  /* Chatbot Styles */
-  #chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-family: Arial, sans-serif;
-    z-index: 9999;
-  }
-
-  #chatbotToggle {
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-  }
-
-  #chatbotBox {
-    display: none;
-    flex-direction: column;
-    width: 300px;
-    height: 400px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
-  #chatbotHeader {
-    background: #007bff;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  #chatbotMessages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 14px;
-  }
-
-  .user-message {
-    text-align: right;
-    background: #e1f0ff;
-    margin: 5px;
-    padding: 8px;
-    border-radius: 8px;
-    display: inline-block;
-  }
-
-  .bot-message {
-    text-align: left;
-    background: #f1f1f1;
-    margin: 5px;
-    padding: 8px;
-    border-radius: 8px;
-    display: inline-block;
-  }
-
-  #chatbotInputArea {
-    display: flex;
-    border-top: 1px solid #ccc;
-  }
-
-  #chatbotInput {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-  }
-
-  #chatbotInputArea button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 0 16px;
-    cursor: pointer;
-  }
-</style>
-
-<div id="chatbot">
-  <button id="chatbotToggle" onclick="toggleChatbot()">💬</button>
-  <div id="chatbotBox">
-    <div id="chatbotHeader">🤖 May I help you?</div>
-    <div id="chatbotMessages"></div>
-    <div id="chatbotInputArea">
-      <input type="text" id="chatbotInput" placeholder="Type your message...">
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  function toggleChatbot() {
-    const box = document.getElementById("chatbotBox");
-    box.style.display = box.style.display === "flex" ? "none" : "flex";
-  }
-
-  async function sendMessage() {
-    const input = document.getElementById("chatbotInput");
-    const messages = document.getElementById("chatbotMessages");
-    const msg = input.value.trim();
-
-    if (msg) {
-      // Show user message
-      const userMsg = document.createElement("div");
-      userMsg.className = "user-message";
-      userMsg.textContent = msg;
-      messages.appendChild(userMsg);
-
-      input.value = "";
-      messages.scrollTop = messages.scrollHeight;
-
-      // Show "typing..."
-      const typingMsg = document.createElement("div");
-      typingMsg.className = "bot-message";
-      typingMsg.textContent = "🤖 Typing...";
-      messages.appendChild(typingMsg);
-
-      try {
-        const res = await fetch("/.netlify/functions/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: msg })
-        });
-
-        const data = await res.json();
-        typingMsg.textContent = data.reply;
-      } catch (err) {
-        typingMsg.textContent = "⚠️ Sorry, something went wrong.";
-      }
-
-      messages.scrollTop = messages.scrollHeight;
-    }
-  }
-</script>
-<!-- ================= End Chatbot Widget ================= -->
-<!-- Chatbot Widget -->
-<div id="chatbot">
-  <button id="chatbotToggle" onclick="toggleChatbot()">🤖</button>
-  <div id="chatbotBox">
-    <div id="chatbotHeader">Pixel Breeze Assistant</div>
-    <div id="chatbotMessages"></div>
-    <div id="chatbotInputArea">
-      <input type="text" id="chatbotInput" placeholder="Ask me anything...">
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  function toggleChatbot() {
-    const box = document.getElementById("chatbotBox");
-    box.style.display = box.style.display === "flex" ? "none" : "flex";
-  }
-
-  async function sendMessage() {
-    const input = document.getElementById("chatbotInput");
-    const messages = document.getElementById("chatbotMessages");
-    const msg = input.value.trim();
-
-    if (msg) {
-      // Show user message
-      const userMsg = document.createElement("div");
-      userMsg.className = "user-message";
-      userMsg.textContent = msg;
-      messages.appendChild(userMsg);
-
-      input.value = "";
-      messages.scrollTop = messages.scrollHeight;
-
-      // Show "typing..."
-      const typingMsg = document.createElement("div");
-      typingMsg.className = "bot-message";
-      typingMsg.textContent = "🤖 Typing...";
-      messages.appendChild(typingMsg);
-
-      try {
-        const res = await fetch("/.netlify/functions/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: msg })
-        });
-
-        const data = await res.json();
-        typingMsg.textContent = data.reply;
-      } catch (err) {
-        typingMsg.textContent = "⚠️ Sorry, something went wrong.";
-      }
-
-      messages.scrollTop = messages.scrollHeight;
-    }
-  }
-</script>
-<!-- Chatbot Widget -->
-<div id="chatbot-container">
-  <button id="chatbot-toggle">💬</button>
-  <div id="chatbot-box" class="hidden">
-    <div id="chatbot-header">
-      🤖 PixelBot
-      <span id="chatbot-close">✖</span>
-    </div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input-area">
-      <input type="text" id="chatbot-input" placeholder="Type your message..." />
-      <button id="chatbot-send">Send</button>
-    </div>
-  </div>
-</div>
-
-<style>
-  /* Floating Button */
-  #chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-  }
-
-  #chatbot-toggle {
-    background: #0078ff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-
-  /* Chatbox */
-  #chatbot-box {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  #chatbot-header {
-    background: #0078ff;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #chatbot-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 14px;
-  }
-
-  #chatbot-input-area {
-    display: flex;
-    border-top: 1px solid #ddd;
-  }
-
-  #chatbot-input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    outline: none;
-    font-size: 14px;
-  }
-
-  #chatbot-send {
-    background: #0078ff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    #chatbot-box {
-      width: 90%;
-      right: 5%;
-      bottom: 80px;
-      max-height: 60%;
-    }
-  }
-
-  .hidden { display: none; }
-  .user { text-align: right; margin: 5px; color: #0078ff; }
-  .bot { text-align: left; margin: 5px; color: #333; }
-</style>
-
-<script>
-  const toggleBtn = document.getElementById("chatbot-toggle");
-  const chatbotBox = document.getElementById("chatbot-box");
-  const closeBtn = document.getElementById("chatbot-close");
-  const sendBtn = document.getElementById("chatbot-send");
-  const inputField = document.getElementById("chatbot-input");
-  const messages = document.getElementById("chatbot-messages");
-
-  toggleBtn.addEventListener("click", () => {
-    chatbotBox.classList.toggle("hidden");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    chatbotBox.classList.add("hidden");
-  });
-
-  sendBtn.addEventListener("click", sendMessage);
-  inputField.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  async function sendMessage() {
-    const userText = inputField.value.trim();
-    if (!userText) return;
-
-    messages.innerHTML += `<div class="user"><b>You:</b> ${userText}</div>`;
-    inputField.value = "";
-    messages.scrollTop = messages.scrollHeight;
-
-    const response = await fetch("/.netlify/functions/chatbot", {
-      method: "POST",
-      body: JSON.stringify({ message: userText }),
-    });
-
-    const data = await response.json();
-    messages.innerHTML += `<div class="bot"><b>Bot:</b> ${data.reply}</div>`;
-    messages.scrollTop = messages.scrollHeight;
-  }
-</script>
+</body>
+</html>
