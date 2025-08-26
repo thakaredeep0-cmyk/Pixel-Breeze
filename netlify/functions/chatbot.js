@@ -1,30 +1,38 @@
-const fetch = require("node-fetch");
-
-exports.handler = async (event) => {
+exports.handler = async function (event, context) {
   try {
-    const { message } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const message = body.message.toLowerCase();
 
-    // Simple AI-like responses (replace with real OpenAI API if you want)
-    let reply = "🤖 I’m not sure about that, but I’ll try to help!";
+    let reply = "🤖 I'm not sure about that, but I’ll try to help!";
 
-    if (/hello|hi/i.test(message)) {
+    // Smart replies
+    if (message.includes("hello") || message.includes("hi")) {
       reply = "👋 Hello! How can I assist you today?";
-    } else if (/services|offer/i.test(message)) {
-      reply = "📌 We offer branding, web design, and digital marketing services.";
-    } else if (/contact|email/i.test(message)) {
-      reply = "📧 You can reach us at: your@email.com";
-    } else if (/bye|thank/i.test(message)) {
-      reply = "😊 Thank you! Have a great day!";
+    } 
+    else if (message.includes("brand") || message.includes("logo")) {
+      reply = "🎨 We specialize in *Brand Identity & Logo Design*! Would you like to know about our design packages?";
+    } 
+    else if (message.includes("website") || message.includes("web design")) {
+      reply = "💻 We create responsive & modern websites. Do you want a portfolio, business, or e-commerce site?";
+    } 
+    else if (message.includes("marketing") || message.includes("seo") || message.includes("digital")) {
+      reply = "📢 Our Digital Marketing services cover SEO, social media, and ads. Shall I share details?";
+    } 
+    else if (message.includes("contact") || message.includes("email") || message.includes("support")) {
+      reply = "📩 You can reach us at: **pixelbreezeagency@gmail.com** or via Instagram DM.";
+    } 
+    else if (message.includes("thanks") || message.includes("thank you")) {
+      reply = "😊 You're welcome! Always here to help.";
     }
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply })
+      body: JSON.stringify({ reply }),
     };
-  } catch (error) {
+  } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "⚠️ Error processing your request." })
+      body: JSON.stringify({ reply: "⚠️ Server error. Please try again later." }),
     };
   }
 };
