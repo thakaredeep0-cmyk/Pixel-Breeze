@@ -330,14 +330,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
     });
-  </script>
-  <div id="chat-container" style="max-width:400px; margin:auto; padding:20px; border:1px solid #ccc; border-radius:10px;">
-  <div id="messages" style="height:200px; overflow-y:auto; border:1px solid #ddd; padding:10px; margin-bottom:10px;">
-    <!-- Chat messages will appear here -->
-  </div>
-  <input id="userInput" type="text" placeholder="Type a message..." style="width:75%; padding:8px;">
-  <button onclick="handleSend()" style="padding:8px;">Send</button>
-</div>
+ 
 
   <script>
   async function sendMessage(message) {
