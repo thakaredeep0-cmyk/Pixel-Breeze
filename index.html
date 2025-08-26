@@ -331,5 +331,44 @@
       if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
     });
   </script>
+  <div id="chat-container" style="max-width:400px; margin:auto; padding:20px; border:1px solid #ccc; border-radius:10px;">
+  <div id="messages" style="height:200px; overflow-y:auto; border:1px solid #ddd; padding:10px; margin-bottom:10px;">
+    <!-- Chat messages will appear here -->
+  </div>
+  <input id="userInput" type="text" placeholder="Type a message..." style="width:75%; padding:8px;">
+  <button onclick="handleSend()" style="padding:8px;">Send</button>
+</div>
+
+  <script>
+  async function sendMessage(message) {
+    const res = await fetch("/.netlify/functions/chatbotJs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
+    const data = await res.json();
+    return data.reply;
+  }
+
+  async function handleSend() {
+    const input = document.getElementById("userInput");
+    const msgBox = document.getElementById("messages");
+
+    const userMessage = input.value.trim();
+    if (!userMessage) return;
+
+    // Show user message
+    msgBox.innerHTML += `<div><b>You:</b> ${userMessage}</div>`;
+    input.value = "";
+
+    // Get chatbot reply
+    const reply = await sendMessage(userMessage);
+
+    // Show chatbot reply
+    msgBox.innerHTML += `<div><b>Bot:</b> ${reply}</div>`;
+    msgBox.scrollTop = msgBox.scrollHeight; // auto scroll
+  }
+</script>
+
 </body>
 </html>
