@@ -293,3 +293,19 @@ footer {
     position: relative;
   }
 }
+/* Default: show nav menu, hide hamburger */
+.navbar .menu-icon {
+  display: none;
+}
+
+/* Mobile: show hamburger, hide menu */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none; /* hide normal menu on mobile */
+  }
+  .navbar .menu-icon {
+    display: block; /* show hamburger */
+    font-size: 26px;
+    cursor: pointer;
+  }
+}
