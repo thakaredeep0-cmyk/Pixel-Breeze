@@ -114,6 +114,7 @@
   </div>
 
   <style>
+    /* === Chatbot Styles === */
     #chatbot-container {
       position: fixed;
       bottom: 20px;
@@ -137,8 +138,8 @@
       position: fixed;
       bottom: 80px;
       right: 20px;
-      width: 300px;
-      max-height: 400px;
+      width: 320px;
+      max-height: 450px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -162,6 +163,7 @@
       padding: 10px;
       overflow-y: auto;
       font-size: 14px;
+      background: #f9f9f9;
     }
 
     #chatbot-input-area {
@@ -190,7 +192,7 @@
         width: 90%;
         right: 5%;
         bottom: 80px;
-        max-height: 60%;
+        max-height: 65%;
       }
     }
 
@@ -200,14 +202,14 @@
   </style>
 
   <script>
-    // Hamburger menu
+    // === Navbar Hamburger ===
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("show");
     });
 
-    // Chatbot logic
+    // === Chatbot ===
     const toggleBtn = document.getElementById("chatbot-toggle");
     const chatbotBox = document.getElementById("chatbot-box");
     const closeBtn = document.getElementById("chatbot-close");
@@ -236,7 +238,6 @@
       inputField.value = "";
       messages.scrollTop = messages.scrollHeight;
 
-      // Call Netlify function
       try {
         const res = await fetch("/.netlify/functions/chatbot", {
           method: "POST",
