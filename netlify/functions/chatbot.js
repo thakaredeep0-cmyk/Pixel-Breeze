@@ -1,39 +1,29 @@
-import fetch from "node-fetch";
+// netlify/functions/chatbotJs.js
 
-export async function handler(event) {
+exports.handler = async (event, context) => {
   try {
-    const { message } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: "You are Pixel Breeze Agency's AI assistant. Answer queries professionally about services, portfolio, contact info, and general help." },
-          { role: "user", content: message }
-        ],
-        max_tokens: 200,
-        temperature: 0.7
-      })
-    });
+    const userMessage = body.message || "Hello";
 
-    const data = await response.json();
-    const reply = data.choices[0].message.content;
+    // Basic chatbot replies
+    let reply;
+    if (userMessage.toLowerCase().includes("hello")) {
+      reply = "Hi 👋 How can I help you today?";
+    } else if (userMessage.toLowerCase().includes("services")) {
+      reply = "We provide digital marketing services like Social Media Marketing, Ads, SEO, and Smart Designs.";
+    } else {
+      reply = "I’m not sure about that, but my team at Pixel Breeze can assist you!";
+    }
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply })
+      body: JSON.stringify({ reply }),
     };
-
   } catch (error) {
-    console.error("Chatbot error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "⚠️ Sorry, something went wrong with AI response." })
+      body: JSON.stringify({ error: "Something went wrong." }),
     };
   }
-}
+};
