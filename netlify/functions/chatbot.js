@@ -1,38 +1,38 @@
-exports.handler = async function (event, context) {
+import fetch from "node-fetch";
+
+export async function handler(event) {
   try {
     const body = JSON.parse(event.body);
-    const message = body.message.toLowerCase();
+    const userMessage = body.message;
 
-    let reply = "🤖 I'm not sure about that, but I’ll try to help!";
+    // Call OpenAI API
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          { role: "system", content: "You are Pixel Breeze Assistant, a friendly and professional AI that answers customer queries about services, portfolio, pricing, and contact details." },
+          { role: "user", content: userMessage }
+        ],
+        max_tokens: 150
+      })
+    });
 
-    // Smart replies
-    if (message.includes("hello") || message.includes("hi")) {
-      reply = "👋 Hello! How can I assist you today?";
-    } 
-    else if (message.includes("brand") || message.includes("logo")) {
-      reply = "🎨 We specialize in *Brand Identity & Logo Design*! Would you like to know about our design packages?";
-    } 
-    else if (message.includes("website") || message.includes("web design")) {
-      reply = "💻 We create responsive & modern websites. Do you want a portfolio, business, or e-commerce site?";
-    } 
-    else if (message.includes("marketing") || message.includes("seo") || message.includes("digital")) {
-      reply = "📢 Our Digital Marketing services cover SEO, social media, and ads. Shall I share details?";
-    } 
-    else if (message.includes("contact") || message.includes("email") || message.includes("support")) {
-      reply = "📩 You can reach us at: **pixelbreezeagency@gmail.com** or via Instagram DM.";
-    } 
-    else if (message.includes("thanks") || message.includes("thank you")) {
-      reply = "😊 You're welcome! Always here to help.";
-    }
+    const data = await response.json();
+    const botReply = data.choices[0].message.content;
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply }),
+      body: JSON.stringify({ reply: botReply })
     };
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "⚠️ Server error. Please try again later." }),
+      body: JSON.stringify({ reply: "⚠️ Sorry, I couldn’t process your request right now." })
     };
   }
-};
+}
