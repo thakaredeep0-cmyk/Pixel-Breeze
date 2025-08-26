@@ -142,5 +142,31 @@
     });
   });
 </script>
+      <!-- JS for toggle & auto-show -->
+  <script>
+    function toggleHelp() {
+      var box = document.getElementById("helpBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+
+    // Show help button only after scrolling 200px
+    window.addEventListener("scroll", function () {
+      const helpBtn = document.querySelector(".help-btn");
+      if (window.scrollY > 200) {
+        helpBtn.style.display = "block";
+      } else {
+        helpBtn.style.display = "none";
+        document.getElementById("helpBox").style.display = "none"; // auto close when hidden
+      }
+    });
+
+    // Hide initially
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".help-btn").style.display = "none";
+    });
+  </script>
+</body>
+</html>
+
 </body>
 </html>
