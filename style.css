@@ -410,3 +410,57 @@ nav ul.active {
 .help-box a:hover {
   text-decoration: underline;
 }
+/* Help button */
+.help-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.3s;
+  display: none; /* hidden by default */
+  z-index: 999;
+}
+
+.help-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Help chat box */
+.help-box {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 250px;
+  display: none;
+  z-index: 999;
+}
+
+.help-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.help-box a {
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.help-box a:hover {
+  text-decoration: underline;
+}
