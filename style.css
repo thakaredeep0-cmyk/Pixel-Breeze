@@ -50,14 +50,13 @@ body{
   box-shadow: 0 6px 20px rgba(46,107,255,.35);
 }
 .btn-primary:hover{ transform: translateY(-1px); }
-
 /* -------- Header / Nav -------- */
-.site-header{
-  position: sticky; top: 0; z-index: 60;
-  background: rgba(10,11,14,.7);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
-  backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #0d0d0d; /* solid dark background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 .nav-wrap{
   height: 70px; display: flex; align-items: center; justify-content: space-between;
