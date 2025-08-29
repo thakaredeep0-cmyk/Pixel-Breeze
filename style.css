@@ -55,27 +55,44 @@ body{
   position: sticky;
   top: 0;
   z-index: 60;
-  background: #0d0d0d; /* solid dark background */
+  background: linear-gradient(90deg, #0b0c10 0%, #15171d 50%, #0b0c10 100%); /* modern dark gradient */
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 .nav-wrap{
-  height: 70px; display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--text);
+}
+
 .brand-logo {
   width: 140px;
-  height: 140px;
+  height: auto;
   object-fit: contain;
-  border-radius: 50%;
-  background: #fff; /* ensures visibility */
-  padding: 8px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  background: transparent !important; /* remove white background */
+  border-radius: 0; /* no circle */
+  padding: 0;
+  filter: drop-shadow(0 0 10px rgba(46,107,255,0.4)); /* subtle glow */
+  transition: filter 0.3s ease;
 }
-.brand-name{ font-weight: 800; font-size: 20px; }
 
-.nav-links{ display: none; gap: 26px; list-style: none; margin: 0; padding: 0; }
-.nav-links a{ text-decoration: none; color: var(--text); font-weight: 600; opacity:.9; }
-.nav-links a:hover{ color:#fff; }
+.brand-logo:hover {
+  filter: drop-shadow(0 0 18px rgba(90,161,255,0.65)); /* stronger glow on hover */
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 20px;
+}
 
 /* Hamburger */
 .hamburger{
