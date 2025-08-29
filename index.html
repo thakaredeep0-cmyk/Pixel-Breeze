@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pixel Breeze Agency</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -331,8 +331,7 @@
       if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
     });
   </script>
-    ...
-  <!-- your other content -->
+    <!-- your other content -->
 
   <script>
     const hamburger = document.querySelector(".hamburger");
@@ -343,7 +342,16 @@
       mobileDrawer.classList.toggle("open");
       body.classList.toggle("no-scroll");
     });
+
+    document.querySelectorAll(".mobile-drawer a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileDrawer.classList.remove("open");
+        body.classList.remove("no-scroll");
+      });
+    });
   </script>
 </body>
 </html>
+
+ 
 
