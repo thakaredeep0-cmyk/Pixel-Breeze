@@ -1,36 +1,31 @@
 // netlify/functions/chatbotJs.js
-import fetch from "node-fetch";
+const OpenAI = require("openai");
 
-export async function handler(event) {
+exports.handler = async function (event, context) {
   try {
     const { message } = JSON.parse(event.body);
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}` // ✅ Use environment variable
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",  // ✅ lightweight, fast model
-        messages: [
-          { role: "system", content: "You are PixelBot, a helpful assistant for Pixel Breeze Agency." },
-          { role: "user", content: message }
-        ],
-      }),
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || "Sorry, I’m not sure about that.";
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",  // or "gpt-4o-mini"
+      messages: [{ role: "user", content: message }],
+    });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply }),
+      body: JSON.stringify({
+        reply: response.choices[0].message.content,
+      }),
     };
-  } catch (err) {
+
+  } catch (error) {
+    console.error("Chatbot error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Server error", details: err.message }),
+      body: JSON.stringify({ reply: "⚠️ Error: " + error.message }),
     };
   }
-}
+};
