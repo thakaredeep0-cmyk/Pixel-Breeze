@@ -122,11 +122,16 @@
     </section>
 
     <!-- ======================= CONTACT ======================= -->
-  <section id="contact" class="section section-alt">
+ <section id="contact" class="section section-alt">
   <div class="container">
     <h2 class="section-title">Contact Us</h2>
 
-    <form name="contact" method="POST" data-netlify="true" id="contactForm" class="contact-form" autocomplete="on">
+    <form id="contactForm" class="contact-form" autocomplete="on" 
+          name="contact" method="POST" data-netlify="true">
+      
+      <!-- Required hidden field for Netlify -->
+      <input type="hidden" name="form-name" value="contact">
+
       <div class="grid">
         <label class="input">
           <span>Name</span>
@@ -148,8 +153,7 @@
     </form>
   </div>
 </section>
-
-        <!-- Quick links (Insta + Email) -->
+    <!-- Quick links (Insta + Email) -->
         <div class="quick-links">
           <a class="ql" href="mailto:pixelbreezeagency@gmail.com" target="_blank" rel="noopener">
             <!-- mail icon -->
