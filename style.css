@@ -211,7 +211,7 @@ a{ color: #9db8ff; }
 
 /* -------- Chatbot -------- */
 .chat-toggle{
-  position: fixed; right: 18px; bottom: 18px; z-index: 80;
+  position: fixed; right: 18px; bottom: 18px; z-index: 9999;
   width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer;
   display:grid; place-items:center;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
@@ -220,13 +220,13 @@ a{ color: #9db8ff; }
 .chat-toggle svg{ width: 26px; height: 26px; fill: #fff; }
 
 .chat-widget{
-  position: fixed; right: 18px; bottom: 90px; width: min(380px, calc(100% - 24px));
+  position: fixed; right: 18px; bottom: 90px; z-index: 9999;
+  width: min(380px, calc(100% - 24px));
   background: #0f1117; border: 1px solid rgba(255,255,255,.08);
   border-radius: 18px; box-shadow: var(--shadow);
   display: grid; grid-template-rows: auto 1fr auto;
   max-height: 70vh; transform: translateY(20px); opacity: 0; pointer-events: none;
   transition: transform .2s ease, opacity .2s ease;
-  z-index: 90;
 }
 .chat-widget.open{ transform: translateY(0); opacity: 1; pointer-events: auto; }
 
@@ -269,13 +269,15 @@ a{ color: #9db8ff; }
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
 }
 
-/* Keep bot above everything else (including mobile menus) */
-.chat-widget, .chat-toggle{ z-index: 9999; }
-
 /* -------- Misc -------- */
 img{ max-width:100%; display:block; }
 a{ color: #9db8ff; }
-#chat-container {
-  position: relative;
-  z-index: 9999; /* keeps it above everything */
+
+/* -------- Mobile Responsive -------- */
+@media(max-width:600px){
+  .chat-widget{
+    width: 95%;
+    right: 2.5%;
+    bottom: 80px;
+  }
 }
