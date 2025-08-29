@@ -29,8 +29,10 @@ body {
   justify-content: space-between;
 }
 
+/* Logo bigger */
 .logo {
-  height: 60px;
+  height: 80px;   /* Increase size */
+  width: auto;
 }
 
 .nav-links {
