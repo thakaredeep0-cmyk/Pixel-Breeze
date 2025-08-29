@@ -8,14 +8,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header / Navbar -->
   <header class="site-header">
-    <div class="container header-wrap">
+    <div class="container nav-container">
       <img src="logo.png" alt="Pixel Breeze Logo" class="logo">
 
-      <!-- Navbar -->
       <nav class="navbar">
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -26,16 +25,16 @@
         </button>
       </nav>
     </div>
-
-    <div class="tagline container">
-      <h1>Breezing your brand to growth</h1>
-      <p class="slogan">Pixel with purpose</p>
-    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <img src="hero.jpg" alt="Hero Image" class="hero-img">
+    <div class="hero-text">
+      <h1>Breezing your brand to growth</h1>
+      <p class="slogan">Pixel with Purpose</p>
+      <a href="#contact" class="btn">Get in touch</a>
+    </div>
   </section>
 
   <!-- About Us -->
@@ -86,13 +85,18 @@
     </div>
   </footer>
 
-  <!-- Small JS for Hamburger -->
+  <!-- JS -->
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.getElementById('nav-links');
 
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   </script>
 </body>
