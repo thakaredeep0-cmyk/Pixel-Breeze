@@ -59,18 +59,18 @@ body{
 .btn-primary:hover{ transform: translateY(-1px); }
 
 /* -------- Header / Nav -------- */
-..site-header{
+.site-header{
   position: sticky; 
   top: 0; 
   z-index: 60;
-  background: rgba(255, 255, 255, 0.9);   /* ✅ lighter / whiteish transparent background */
+  background: rgba(255, 255, 255, 0.95);   /* ✅ light navbar */
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,.08);  /* ✅ subtle border */
+  border-bottom: 1px solid rgba(0,0,0,.1);  /* ✅ subtle bottom border */
 }
 
 .nav-wrap{
-  height: 80px;   /* ✅ slightly taller to fit bigger logo */
+  height: 80px;   /* ✅ taller for logo */
   display: flex; 
   align-items: center; 
   justify-content: space-between;
@@ -81,13 +81,13 @@ body{
   align-items:center; 
   gap:12px; 
   text-decoration:none; 
-  color:#111;   /* ✅ text dark for light navbar */
+  color:#111;   /* ✅ brand text dark */
 }
 .brand-logo{ width: 72px; height: 72px; object-fit: contain; }  /* ✅ bigger logo */
-.brand-name{ font-weight: 800; font-size: 22px; color:#111; }   /* ✅ darker brand text */
+.brand-name{ font-weight: 800; font-size: 22px; color:#111; }   /* ✅ visible brand text */
 
 .nav-links{
-  display: none; 
+  display: flex;   /* ✅ make visible */
   gap: 26px; 
   list-style: none; 
   margin: 0; 
@@ -95,12 +95,12 @@ body{
 }
 .nav-links a{ 
   text-decoration: none; 
-  color:#111;      /* ✅ dark links for visibility */
+  color:#111;       /* ✅ dark text for white navbar */
   font-weight: 600; 
   opacity:.9; 
 }
 .nav-links a:hover{ 
-  color:#000;      /* ✅ bold hover */
+  color:#000;       /* ✅ darker hover */
 }
 /* Hamburger */
 .hamburger{
