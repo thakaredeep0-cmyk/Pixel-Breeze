@@ -1,99 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pixel Breeze Agency</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <img src="logo.png" alt="Pixel Breeze Logo" class="logo">
-      <nav>
-        <ul class="nav-links">
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <img src="logo.png" alt="Pixel Breeze logo" class="brand-logo" />
+        <span class="brand-name">Pixel Breeze Agency</span>
+      </a>
+
+      <nav class="nav">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="desktopMenu">
           <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
-          <span></span><span></span><span></span>
+
+        <!-- Mobile drawer -->
+        <div class="mobile-drawer" id="mobileMenu" aria-hidden="true">
+          <ul>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#services" class="mobile-link">Services</a></li>
+            <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+          </ul>
         </div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ======================= HERO ======================= -->
   <section class="hero">
-    <img src="hero.jpg" alt="Hero Image" class="hero-img">
-    <div class="hero-text">
-      <h1>Breezing your brand to growth</h1>
-      <p class="tagline">Pixel with Purpose</p>
+    <img src="hero.jpg" alt="" class="hero-bg" />
+    <div class="container hero-inner">
+      <h1 class="hero-title">Breezing your brand to growth</h1>
+      <p class="hero-sub">Pixel with Purpose</p>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container" style="text-align:center;">
-      <h2>About Us</h2>
-      <p>At Pixel Breeze, we blend creativity and strategy to help brands grow faster in the digital world.<br>
-      We believe in turning ideas into impactful designs, building strategies that drive results, and helping businesses stand out in the digital breeze.</p>
-    </div>
-  </section>
+  <main>
+    <!-- ======================= ABOUT ======================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p class="lead">
+          At <strong>PixelBreeze</strong>, we craft stunning designs and digital strategies that help businesses stand out.
+          Our mission is to bring creativity and purpose together to grow your brand with impact.
+        </p>
+      </div>
+    </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <div class="container" style="text-align:center;">
-      <h2>Portfolio</h2>
-      <p>🚀 Coming Soon – Stay Tuned!</p>
-    </div>
-  </section>
+    <!-- ======================= SERVICES ======================= -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
+        <div class="cards">
+          <!-- Brand Identity -->
+          <article class="card">
+            <div class="icon">
+              <!-- palette icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.7 0 2-.8 2-1.5 0-.6-.3-1.1-.6-1.6-.3-.6-.4-1.1-.1-1.6.4-.8 1.4-1.3 2.6-1.3 1.6 0 3-1.3 3-3A9 9 0 0 0 12 3Zm-4 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4-2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+            </div>
+            <h3>Brand Identity Design</h3>
+            <p>We design logos, color palettes, and brand guidelines that build a strong brand presence.</p>
+          </article>
+
+          <!-- Web & App -->
+          <article class="card">
+            <div class="icon">
+              <!-- laptop icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3zM2 18h20v2H2z"/></svg>
+            </div>
+            <h3>Web &amp; App Design</h3>
+            <p>Modern, user-friendly, and responsive websites and apps tailored to your business needs.</p>
+          </article>
+
+          <!-- Digital Marketing -->
+          <article class="card">
+            <div class="icon">
+              <!-- megaphone icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4a2 2 0 0 0 2 2h2l4 4v-6.1l8-2.9V7.9l-8-2.9V3l-4 4H5a2 2 0 0 0-2 2Z"/></svg>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>Boost visibility with social media, SEO, and targeted marketing strategies that deliver results.</p>
+          </article>
+
+          <!-- Social Media Marketing -->
+          <article class="card">
+            <div class="icon">
+              <!-- chat bubble icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6a5 5 0 0 0-5-5H8A5 5 0 0 0 3 6v8a5 5 0 0 0 5 5h2l3.5 4 1.5-4h1a5 5 0 0 0 5-5V6Z"/></svg>
+            </div>
+            <h3>Social Media Marketing</h3>
+            <p>Plan, create, and manage content that builds community and converts followers into customers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PORTFOLIO ======================= -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Portfolio</h2>
+        <p class="lead">Our portfolio is coming soon — stay tuned!</p>
+      </div>
+    </section>
+
+    <!-- ======================= CONTACT ======================= -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+
+        <form id="contactForm" class="contact-form" autocomplete="on">
+          <div class="grid">
+            <label class="input">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+
+            <label class="input">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label class="input">
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+
+        <!-- Quick links (Insta + Email) -->
+        <div class="quick-links">
+          <a class="ql" href="mailto:pixelbreezeagency@gmail.com" target="_blank" rel="noopener">
+            <!-- mail icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h20v12H2z"/><path d="M2 6l10 7L22 6"/></svg>
+            <span>Email</span>
+          </a>
+
+          <a class="ql" href="https://instagram.com/pixelbreeze.agency" target="_blank" rel="noopener">
+            <!-- instagram icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm6.5-.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
     <div class="container">
-      <h2>Our Services</h2>
-      <p class="service-intro">At Pixel Breeze, we don’t just design — we craft experiences. Our strategies are tailored to give your brand a voice, boost your online presence, and convert clicks into loyal clients.</p>
-      <div class="services-grid">
-        <div class="service-item">✨ Social Media Marketing</div>
-        <div class="service-item">🎯 Digital Strategy</div>
-        <div class="service-item">🎨 Creative Design</div>
-        <div class="service-item">📈 SEO & Growth</div>
+      <p>© <span id="year"></span> Pixel Breeze Agency. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======================= PIXELBOT (Netlify) ======================= -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">
+    <!-- bubble icon -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6a5 5 0 0 0-5-5H8A5 5 0 0 0 3 6v8a5 5 0 0 0 5 5h2l3.5 4 1.5-4h1a5 5 0 0 0 5-5V6Z"/></svg>
+  </button>
+
+  <div id="chatWidget" class="chat-widget" aria-live="polite" aria-hidden="true">
+    <header class="chat-header">
+      <div class="bot-mark">
+        <span class="bot-emoji">🤖</span>
+        <strong>PixelBot</strong>
+      </div>
+      <button id="chatClose" class="chat-close" aria-label="Close chat">×</button>
+    </header>
+
+    <div id="chatBody" class="chat-body">
+      <div class="msg bot">
+        <div class="bubble">👋 Hello! How can I assist you today?</div>
       </div>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-  <!-- Footer -->
-<footer>
-  <div class="container footer-container">
-    <p>&copy; 2025 Pixel Breeze. All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="mailto:pixelbreezeagency@gmail.com" class="email-icon">📧</a>
-      <a href="https://instagram.com/pixelbreeze.agency" target="_blank" class="insta-icon">📷</a>
-    </div>
+    <form id="chatForm" class="chat-input" autocomplete="off">
+      <input id="chatText" type="text" placeholder="Type your message..." required />
+      <button class="btn-send" type="submit">Send</button>
+    </form>
   </div>
-</footer>
 
-
+  <!-- ======================= SCRIPTS ======================= -->
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Hamburger menu logic
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+    }
+
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      const willOpen = !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(willOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!willOpen));
+      document.body.classList.toggle('no-scroll', willOpen);
+    });
+
+    // Close drawer when a link is clicked or user taps outside
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Contact form: simple mailto fallback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:pixelbreezeagency@gmail.com?subject=New inquiry from Pixel Breeze&body=${body}`;
+      this.reset();
+    });
+
+    // ================= PixelBot (Netlify function) =================
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWidget = document.getElementById('chatWidget');
+    const chatClose  = document.getElementById('chatClose');
+    const chatForm   = document.getElementById('chatForm');
+    const chatText   = document.getElementById('chatText');
+    const chatBody   = document.getElementById('chatBody');
+
+    function openChat() {
+      chatWidget.classList.add('open');
+      chatWidget.setAttribute('aria-hidden', 'false');
+      setTimeout(() => chatText.focus(), 150);
+    }
+    function closeChat() {
+      chatWidget.classList.remove('open');
+      chatWidget.setAttribute('aria-hidden', 'true');
+    }
+
+    chatToggle.addEventListener('click', openChat);
+    chatClose.addEventListener('click', closeChat);
+
+    function addMessage(text, who='bot') {
+      const row = document.createElement('div');
+      row.className = `msg ${who}`;
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      chatBody.appendChild(row);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function extractReply(data) {
+      if (!data) return null;
+      if (typeof data === 'string') return data;
+      if (data.reply) return data.reply;
+      if (data.message) return data.message;
+      if (data.response) return data.response;
+      // Common OpenAI shape
+      try {
+        const maybe = data.choices?.[0]?.message?.content;
+        if (maybe) return maybe;
+      } catch(e) {}
+      return null;
+    }
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = chatText.value.trim();
+      if (!text) return;
+      addMessage(text, 'user');
+      chatText.value = '';
+      addMessage('Typing…', 'bot');
+      const typingNode = chatBody.lastElementChild;
+
+      try {
+        const res = await fetch('/.netlify/functions/chatbotJs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json().catch(() => ({}));
+        const reply = extractReply(data) || "I’m not sure about that, but I’ll try to help!";
+        typingNode.querySelector('.bubble').textContent = reply;
+      } catch (err) {
+        typingNode.querySelector('.bubble').textContent =
+          "Hmm, I couldn't reach the server. Please try again in a moment.";
+      }
+    });
+
+    // Close chat on Escape, keep it above everything
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
     });
   </script>
 </body>
