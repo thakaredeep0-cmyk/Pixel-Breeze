@@ -1,29 +1,31 @@
-// netlify/functions/chatbotJs.js
+import fetch from "node-fetch";
 
-exports.handler = async (event, context) => {
+export async function handler(event) {
   try {
-    const body = JSON.parse(event.body);
+    const { message } = JSON.parse(event.body);
 
-    const userMessage = body.message || "Hello";
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",   // you can also use gpt-4
+        messages: [{ role: "user", content: message }]
+      })
+    });
 
-    // Basic chatbot replies
-    let reply;
-    if (userMessage.toLowerCase().includes("hello")) {
-      reply = "Hi 👋 How can I help you today?";
-    } else if (userMessage.toLowerCase().includes("services")) {
-      reply = "We provide digital marketing services like Social Media Marketing, Ads, SEO, and Smart Designs.";
-    } else {
-      reply = "I’m not sure about that, but my team at Pixel Breeze can assist you!";
-    }
+    const data = await response.json();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ reply }),
+      body: JSON.stringify({ reply: data.choices[0].message.content })
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Something went wrong." }),
+      body: JSON.stringify({ error: error.message })
     };
   }
-};
+}
