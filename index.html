@@ -331,5 +331,19 @@
       if (e.key === 'Escape' && chatWidget.classList.contains('open')) closeChat();
     });
   </script>
+    ...
+  <!-- your other content -->
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const mobileDrawer = document.querySelector(".mobile-drawer");
+    const body = document.body;
+
+    hamburger.addEventListener("click", () => {
+      mobileDrawer.classList.toggle("open");
+      body.classList.toggle("no-scroll");
+    });
+  </script>
 </body>
 </html>
+
