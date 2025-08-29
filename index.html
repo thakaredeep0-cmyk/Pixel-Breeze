@@ -7,79 +7,97 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">
-      <img src="logo.png" alt="Pixel Breeze Logo">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <img src="logo.png" alt="Pixel Breeze Logo" class="logo">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
     </div>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="hamburger">&#9776;</div>
-    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
+    <img src="hero.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <h1>Breezing your brand to growth</h1>
-      <p><em>Pixel with purpose</em></p>
-      <a href="#contact" class="btn">Get in Touch</a>
+      <p class="tagline">Pixel with Purpose</p>
     </div>
   </section>
 
-  <!-- Portfolio -->
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At Pixel Breeze, we blend creativity and strategy to help brands grow faster in the digital world.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="card">Project 1</div>
-      <div class="card">Project 2</div>
-      <div class="card">Project 3</div>
-      <div class="card">Project 4</div>
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">Project 1</div>
+        <div class="portfolio-item">Project 2</div>
+        <div class="portfolio-item">Project 3</div>
+        <div class="portfolio-item">Project 4</div>
+      </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Services Section -->
   <section id="services" class="services">
-    <h2>Our Services</h2>
-    <p class="tagline">At Pixel Breeze, we don’t just market—we create experiences that help your brand grow faster and smarter.</p>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Social Media Marketing</h3>
-        <p>Boost engagement, reach, and sales with smart strategies designed for your brand.</p>
-      </div>
-      <div class="service-card">
-        <h3>Creative Design</h3>
-        <p>Eye-catching visuals that leave a lasting impression on your audience.</p>
-      </div>
-      <div class="service-card">
-        <h3>Brand Strategy</h3>
-        <p>We craft clear, powerful strategies that make your brand stand out.</p>
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="service-intro">At Pixel Breeze, we don’t just design — we craft experiences. Our strategies are tailored to give your brand a voice, boost your online presence, and convert clicks into loyal clients.</p>
+      <div class="services-grid">
+        <div class="service-item">✨ Social Media Marketing</div>
+        <div class="service-item">🎯 Digital Strategy</div>
+        <div class="service-item">🎨 Creative Design</div>
+        <div class="service-item">📈 SEO & Growth</div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Pixel Breeze. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="mailto:yourmail@example.com">📧</a>
+        <a href="https://instagram.com" target="_blank">📷</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Mobile Hamburger Menu
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
