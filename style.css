@@ -53,12 +53,15 @@ body{
 
 /* -------- Header / Nav -------- */
 .site-header{
-  position: sticky; top: 0; z-index: 60;
-  background: rgba(10,11,14,.7);
+  position: sticky; 
+  top: 0; 
+  z-index: 60;
+  background: rgba(255,255,255,0.9);   /* light background */
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(0,0,0,.1); /* subtle line */
 }
+
 .nav-wrap{
   height: 70px; display: flex; align-items: center; justify-content: space-between;
 }
@@ -66,9 +69,15 @@ body{
 .brand-logo{ width: 56px; height: 56px; object-fit: contain; }
 .brand-name{ font-weight: 800; font-size: 20px; }
 
-.nav-links{ display: none; gap: 26px; list-style: none; margin: 0; padding: 0; }
-.nav-links a{ text-decoration: none; color: var(--text); font-weight: 600; opacity:.9; }
-.nav-links a:hover{ color:#fff; }
+.nav-links a{ 
+  text-decoration: none; 
+  color: #000;        /* Black text for better contrast */
+  font-weight: 600; 
+  opacity: .9; 
+}
+.nav-links a:hover{ 
+  color: #333;        /* Dark gray on hover */
+}
 
 /* Hamburger */
 .hamburger{
