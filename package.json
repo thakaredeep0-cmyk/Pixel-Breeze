@@ -1,0 +1,12 @@
+{
+  "name": "pixelbreeze",
+  "version": "1.0.0",
+  "description": "Pixel Breeze website with chatbot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
