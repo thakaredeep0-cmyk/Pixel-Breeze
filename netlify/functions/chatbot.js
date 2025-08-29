@@ -1,17 +1,19 @@
-// netlify/functions/chatbotJs.js
-const OpenAI = require("openai");
+import OpenAI from "openai";
 
-exports.handler = async function (event, context) {
+export async function handler(event, context) {
   try {
-    const { message } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
 
-    const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+    const client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY, // set this in Netlify Environment Variables
     });
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",  // or "gpt-4o-mini"
-      messages: [{ role: "user", content: message }],
+    const response = await client.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "You are PixelBot, a helpful assistant for Pixel Breeze Agency. You provide information about services like digital marketing, social media marketing, ad campaigns, and design." },
+        { role: "user", content: body.message }
+      ],
     });
 
     return {
@@ -22,10 +24,12 @@ exports.handler = async function (event, context) {
     };
 
   } catch (error) {
-    console.error("Chatbot error:", error);
+    console.error("Error in chatbot function:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ reply: "⚠️ Error: " + error.message }),
+      body: JSON.stringify({
+        reply: "Sorry, something went wrong. Please try again later.",
+      }),
     };
   }
-};
+}
