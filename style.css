@@ -83,7 +83,7 @@ body{
   text-decoration:none; 
   color:#111;   /* ✅ brand text dark */
 }
-.brand-logo{ width: 72px; height: 72px; object-fit: contain; }  /* ✅ bigger logo */
+.brand-logo{ width: 90px; height: 90px; object-fit: contain; }  /* ✅ bigger logo */
 .brand-name{ font-weight: 800; font-size: 22px; color:#111; }   /* ✅ visible brand text */
 
 .nav-links{
