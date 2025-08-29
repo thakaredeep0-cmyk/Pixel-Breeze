@@ -251,16 +251,10 @@
       if (e.key === 'Escape') closeMenu();
     });
 
-    // Contact form: simple mailto fallback
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = this.name.value.trim();
-      const email = this.email.value.trim();
-      const message = this.message.value.trim();
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:pixelbreezeagency@gmail.com?subject=New inquiry from Pixel Breeze&body=${body}`;
-      this.reset();
-    });
+   // Contact form (Netlify handles submission)
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  // allow Netlify to handle form submission
+});
 
     // ================= PixelBot (Netlify function) =================
     const chatToggle = document.getElementById('chatToggle');
