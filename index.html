@@ -1,102 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixel Breeze Agency</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Navbar -->
+  <!-- Header -->
   <header class="site-header">
-    <div class="container nav-container">
-      <img src="logo.png" alt="Pixel Breeze Logo" class="logo">
-
-      <nav class="navbar">
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- Hamburger -->
-        <button class="hamburger" id="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </nav>
+    <div class="logo">
+      <img src="logo.png" alt="Pixel Breeze Logo">
     </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="hero.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <h1>Breezing your brand to growth</h1>
-      <p class="slogan">Pixel with purpose</p>
-      <a href="#contact" class="btn">Get in touch</a>
-    </div>
-  </section>
-
-  <!-- About Us -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        At Pixel Breeze, we help brands grow with creativity, smart design, and powerful strategies. 
-        Our team blends innovation and purpose to ensure your brand thrives in the digital world.
-      </p>
+      <p><em>Pixel with purpose</em></p>
+      <a href="#contact" class="btn">Get in Touch</a>
     </div>
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="section">
-    <div class="container">
-      <h2>Portfolio</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">Project 1</div>
-        <div class="portfolio-item">Project 2</div>
-        <div class="portfolio-item">Project 3</div>
-        <div class="portfolio-item">Project 4</div>
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="card">Project 1</div>
+      <div class="card">Project 2</div>
+      <div class="card">Project 3</div>
+      <div class="card">Project 4</div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <p class="tagline">At Pixel Breeze, we don’t just market—we create experiences that help your brand grow faster and smarter.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Social Media Marketing</h3>
+        <p>Boost engagement, reach, and sales with smart strategies designed for your brand.</p>
+      </div>
+      <div class="service-card">
+        <h3>Creative Design</h3>
+        <p>Eye-catching visuals that leave a lasting impression on your audience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Brand Strategy</h3>
+        <p>We craft clear, powerful strategies that make your brand stand out.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <p>&copy; 2025 Pixel Breeze. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="mailto:yourmail@example.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://instagram.com/yourinsta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JS -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when clicking link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    // Mobile Hamburger Menu
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
   </script>
 </body>
